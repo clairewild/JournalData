@@ -19,7 +19,7 @@
 ## Architecture and Technologies
 
 - React
-- Django
+- Django / Flask
 - spaCy (python library)
 
 ## Implementation Timeline
