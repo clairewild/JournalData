@@ -20,6 +20,7 @@
 
 - React
 - Django / Flask
+- SQL Alchemy?? (ORM)
 - spaCy (python library)
 
 ## Implementation Timeline
@@ -44,3 +45,10 @@ This article is helpful for setting up Flask: https://www.codementor.io/garethdw
 
 - sudo pip3 install -U spacy
 - sudo python3 -m spacy.en.download all --> downloads English data and models, it's 1G
+
+
+## Links
+
+http://textminingonline.com/getting-started-with-spacy
+https://nicschrading.com/project/Intro-to-NLP-with-spaCy/
+https://github.com/nosovsh/motoparking
