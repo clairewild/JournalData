@@ -49,6 +49,6 @@ This article is helpful for setting up Flask: https://www.codementor.io/garethdw
 
 ## Links
 
-http://textminingonline.com/getting-started-with-spacy
-https://nicschrading.com/project/Intro-to-NLP-with-spaCy/
-https://github.com/nosovsh/motoparking
+- http://textminingonline.com/getting-started-with-spacy
+- https://nicschrading.com/project/Intro-to-NLP-with-spaCy/
+- https://github.com/nosovsh/motoparking
