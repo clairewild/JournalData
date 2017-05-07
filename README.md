@@ -52,3 +52,5 @@ This article is helpful for setting up Flask: https://www.codementor.io/garethdw
 - http://textminingonline.com/getting-started-with-spacy
 - https://nicschrading.com/project/Intro-to-NLP-with-spaCy/
 - https://github.com/nosovsh/motoparking
+- http://www.ef.edu/english-resources/english-grammar/determiners/ (see determiners.png)
+- http://stackoverflow.com/questions/40288323/what-do-spacys-part-of-speech-and-dependency-tags-mean
