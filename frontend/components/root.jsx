@@ -1,12 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-// import App from './app';
+import HomeContainer from './home_container';
 
 const Root = ({ store }) => {
 
   return (
     <Provider store={ store }>
-      <h1>Hello again</h1>
+      <HomeContainer />
     </Provider>
   );
 };

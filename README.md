@@ -55,3 +55,4 @@ This article is helpful for setting up Flask: https://www.codementor.io/garethdw
 - https://github.com/nosovsh/motoparking
 - http://www.ef.edu/english-resources/english-grammar/determiners/ (see determiners.png)
 - http://stackoverflow.com/questions/40288323/what-do-spacys-part-of-speech-and-dependency-tags-mean
+- https://people.eecs.berkeley.edu/~klein/cs294-19/SP08%20cs294%20lecture%207%20--%20POS%20tagging%20(6PP).pdf
