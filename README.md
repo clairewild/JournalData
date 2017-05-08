@@ -12,20 +12,27 @@
 
 ## Functionality MVPs
 
+- words per day
+- time orientation
 - positivity vs. negativity
+- sentiment / mood analysis
+- subjects / pronoun usage (I / you / we / they / he-she-proper)
+- pie chart topics for day/month/year
 
 ## Design Docs
 
 ## Architecture and Technologies
 
 - React
-- Django / Flask
-- SQL Alchemy?? (ORM)
+- Flask
 - spaCy (python library)
+- SQL Alchemy?? (ORM)
 
 ## Implementation Timeline
 
 Phase 1:
+- Dropbox API
+- Sentiment analysis
 
 Phase 2:
 
