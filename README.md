@@ -12,10 +12,12 @@
 
 ## Functionality MVPs
 
+Users will be able to sign into their Dropbox account, and the app will find text files synced from DayOne, and analyze their writing.  It will display various charts/graphs to visualize the data, including:
+
 - words per day
 - time orientation
 - positivity vs. negativity
-- sentiment / mood analysis
+- sentiment analysis
 - subjects / pronoun usage (I / you / we / they / he-she-proper)
 - pie chart topics for day/month/year
 
@@ -46,7 +48,7 @@ Phase 2:
 - install python3 --> https://www.python.org/downloads/ (just click the button)
 - sudo easy_install pip --> the python package installer, might not need to run this command b/c should come with python
 - pip3 install flask --user
-- `npm install`
+- npm install
 - python3 app.py --> to run project on localhost
 
 This article is helpful for setting up Flask: https://www.codementor.io/garethdwyer/flask-vs-django-why-flask-might-be-better-4xs7mdf8v
