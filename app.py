@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify
 
-from test import test_function
+from time_orientation import time_orientation_fn
 
 app = Flask(__name__)
 
@@ -10,10 +10,10 @@ def show_index():
   return render_template("index.html")
 
 
-@app.route('/test', methods=['GET'])
-def test():
-    value = test_function()
-    return jsonify(value)
+@app.route('/time-orient', methods=['GET'])
+def time_orient():
+    data = time_orientation_fn()
+    return jsonify(data)
 
 if __name__ == "__main__":
   app.run()

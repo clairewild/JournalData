@@ -1,10 +1,9 @@
 import spacy
 nlp = spacy.load('en')
 
-def test_function():
+def time_orientation_fn():
     str = open('./corpus/entry1.txt', 'r').read()
-    doc7 = nlp(str)
-    # doc7 = nlp(u"I will have been writing. I just ate my lunch.")
+    document = nlp(str)
 
     past_count = 0
     present_count = 0
@@ -18,9 +17,7 @@ def test_function():
     present_aux = ["am", "is", "are", "has", "have", "do", "does"]
     #TODO negative verbs, going
 
-    root_verbs = 0
-
-    for token in doc7:
+    for token in document:
         if token == token.head:
             idx = token.i - 1
             while token.doc[idx].text in aux_verbs:
@@ -43,4 +40,4 @@ def test_function():
     print("present: ", present_count / total_verbs)
     print("future: ", future_count / total_verbs)
 
-    return {"past": past_count / total_verbs, "present": present_count / total_verbs, "future": future_count / total_verbs }    
+    return {"past": past_count / total_verbs, "present": present_count / total_verbs, "future": future_count / total_verbs }
