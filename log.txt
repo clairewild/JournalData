@@ -1,5 +1,0 @@
-2017-05-07T19:26:03Z
-
-Every 7 days over the next 7d. Save 10s per event.
-Don't spend more than 10.0s automating this task.
-

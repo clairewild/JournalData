@@ -1,10 +1,10 @@
 module.exports = {
   entry: "./frontend/entry.jsx",
   output: {
-    filename: "./bundle.js"
+    filename: "./static/bundle.js"
   },
   resolve: {
-    extensions: [".js", "*" ]
+    extensions: [".js", ".jsx", ".css", "*" ]
   },
   module: {
     loaders: [

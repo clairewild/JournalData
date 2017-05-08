@@ -53,7 +53,7 @@ present_aux = ["am", "is", "are", "has", "have", "do", "does"]
 
 root_verbs = 0
 
-for token in sent:
+for token in doc7:
     if token == token.head:
         idx = token.i - 1
         while token.doc[idx].text in aux_verbs:
@@ -71,13 +71,7 @@ for token in sent:
             elif token.tag_ in present:
                 present_count += 1
 
-print("past: ", past_count)
-print("present: ", present_count)
-print("future: ", future_count)
-print("total verbs: ", past_count + present_count + future_count)
-
-count = 0
-for sent in doc7.sents:
-    count += 1
-
-print("sentences: ", count)
+total_verbs = past_count + present_count + future_count
+print("past: ", past_count / total_verbs)
+print("present: ", present_count / total_verbs)
+print("future: ", future_count / total_verbs)

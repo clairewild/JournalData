@@ -39,6 +39,7 @@ Phase 2:
 - install python3 --> https://www.python.org/downloads/ (just click the button)
 - sudo easy_install pip --> the python package installer, might not need to run this command b/c should come with python
 - pip3 install flask --user
+- `npm install`
 - python3 app.py --> to run project on localhost
 
 This article is helpful for setting up Flask: https://www.codementor.io/garethdwyer/flask-vs-django-why-flask-might-be-better-4xs7mdf8v
