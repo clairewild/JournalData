@@ -15,7 +15,7 @@ def time_orientation_fn():
     aux_verbs = ["am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", "do", "does", "did", "will"]
     past_aux = ["was", "were", "had", "did"]
     present_aux = ["am", "is", "are", "has", "have", "do", "does"]
-    #TODO negative verbs, going
+    # TODO negative verbs, going
 
     for token in document:
         if token == token.head:
