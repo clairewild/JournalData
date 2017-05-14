@@ -15,7 +15,6 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <p>This is the data</p>
         <TimeOrientationChart />
       </div>
     );

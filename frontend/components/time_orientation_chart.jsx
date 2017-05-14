@@ -5,11 +5,17 @@ class TimeOrientationChart extends React.Component {
   constructor(props) {
     super(props);
   }
-  
+
   render() {
-    const past_data = this.props.data.time_orientation.past;
-    const present_data = this.props.data.time_orientation.present;
-    const future_data = this.props.data.time_orientation.future;
+    let past_data = [];
+    let present_data = [];
+    let future_data = [];
+
+    if (this.props.data) {
+      past_data = this.props.data.time_orientation.past;
+      present_data = this.props.data.time_orientation.present;
+      future_data = this.props.data.time_orientation.future;
+    }
 
     return (
       <VictoryChart>
@@ -20,7 +26,7 @@ class TimeOrientationChart extends React.Component {
         <VictoryArea
           data={ past_data }
           x="date"
-          y={ (datum) => datum.percentage * 100 }
+          y={ (datum) => datum.percentage * 100.00 }
           style={{
             data: {fill: "blue", opacity: 0.7}
           }}>
@@ -44,10 +50,6 @@ class TimeOrientationChart extends React.Component {
           }}>
         </VictoryArea>
 
-        <VictoryAxis
-          tickValues={[1, 2, 3, 4, 5]}
-          tickFormat={["Jan", "Feb", "Mar", "Apr", "May"]}
-        />
 
         <VictoryAxis
           dependentAxis
@@ -61,5 +63,10 @@ class TimeOrientationChart extends React.Component {
     );
   }
 }
+
+// <VictoryAxis
+//   tickValues={[1, 2, 3, 4, 5]}
+//   tickFormat={["Jan", "Feb", "Mar", "Apr", "May"]}
+// />
 
 export default TimeOrientationChart;
