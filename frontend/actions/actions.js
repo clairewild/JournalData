@@ -8,7 +8,6 @@ export const receiveData = data => ({
 });
 
 export const fetchData = () => dispatch => {
-  console.log("fetchData");
   return (
     ApiUtil.fetchData()
       .then(data => dispatch(receiveData(data)))

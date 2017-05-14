@@ -36,8 +36,8 @@ def time_orientation_fn():
                     present_count += 1
 
     total_verbs = past_count + present_count + future_count
-    print("past: ", past_count / total_verbs)
-    print("present: ", present_count / total_verbs)
-    print("future: ", future_count / total_verbs)
+    # print("past: ", past_count / total_verbs)
+    # print("present: ", present_count / total_verbs)
+    # print("future: ", future_count / total_verbs)
 
     return {"past": past_count / total_verbs, "present": present_count / total_verbs, "future": future_count / total_verbs }

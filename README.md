@@ -2,6 +2,7 @@
 
 - time orientation for multiple files at a time
 - plot time orientation
+- corpora download
 - json file uploads
 
 # Journal Data

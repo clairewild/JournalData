@@ -11,14 +11,14 @@ def show_index():
   return render_template("index.html")
 
 
-@app.route('/time-orient', methods=['GET'])
-def time_orient():
-    data = time_orientation_fn()
-    return jsonify(data)
-
-@app.route('/pronouns', methods=['GET'])
-def pronouns():
-    data = pronouns_fn()
+@app.route('/data', methods=['GET'])
+def data():
+    time_data = time_orientation_fn()
+    pronouns_data = pronouns_fn()
+    data = {
+        "time_data": time_data,
+        "pronouns_data": pronouns_data
+    }
     return jsonify(data)
 
 if __name__ == "__main__":
