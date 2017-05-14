@@ -1,39 +1,59 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { VictoryArea, VictoryChart } from 'victory';
-
-const data1 = [
-  {month: "September", profit: 35000, loss: 2000},
-    {month: "October", profit: 42000, loss: 8000},
-    {month: "December", profit: 55000, loss: 5000}
-];
-
-const data2 = [
-  {month: "October", profit: 2000, loss: 2000},
-    {month: "November", profit: 46000, loss: 8000},
-    {month: "December", profit: 50000, loss: 4000}
-];
+import { VictoryChart, VictoryLabel, VictoryArea, VictoryAxis, VictoryLegend } from 'victory';
 
 class TimeOrientationChart extends React.Component {
+  const past_data = this.props.data.time_orientation.past;
+  const present_data = this.props.data.time_orientation.present;
+  const future_data = this.props.data.time_orientation.future;
+
   render() {
     return (
       <VictoryChart>
+        <VictoryLabel
+          text="Time Orientation">
+        </VictoryLabel>
+
         <VictoryArea
-          data={ data1 }
+          data={ past_data }
           x="month"
-          y={(datum) => datum.profit - datum.loss}
+          y=
           style={{
-            data: {fill: "tomato", opacity: 0.7}
+            data: {fill: "blue", opacity: 0.7}
           }}>
         </VictoryArea>
 
         <VictoryArea
-          data={ data2 }
+          data={ present_data }
           x="month"
-          y={(datum) => datum.profit - datum.loss}>
+          y=
+          style={{
+            data: {fill: "green", opacity: 0.7}
+          }}>
         </VictoryArea>
 
+        <VictoryArea
+          data={ future_data }
+          x="month"
+          y=
+          style={{
+            data: {fill: "purple", opacity: 0.7}
+          }}>
+        </VictoryArea>
 
+        <VictoryAxis
+          tickValues={[1, 2, 3, 4, 5]}
+          tickFormat={["Jan", "Feb", "Mar", "Apr", "May"]}
+        />
+
+        <VictoryAxis
+          dependentAxis
+          tickFormat={["20%", "40%", "60%", "80%", "100%"]}
+        />
+
+        <VictoryLegend
+          data={[{ name: "Past", labels: { fill: "blue" } } }, { name: "Present", labels: { fill: "green" } } }, { name: "Future", labels: { fill: "purple" } }}]}
+        />
       </VictoryChart>
     );
   }
