@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TimeOrientationChart from './time_orientation_chart.jsx';
+import TimeOrientationContainer from './time_orientation_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -8,14 +8,13 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    console.log("componentDidMount");
     this.props.fetchData();
   }
 
   render() {
     return (
       <div>
-        <TimeOrientationChart />
+        <TimeOrientationContainer />
       </div>
     );
   }
