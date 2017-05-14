@@ -2,7 +2,6 @@ import spacy
 nlp = spacy.load('en')
 
 def time_orientation_fn(str):
-    # str = open('./corpus/entry1.txt', 'r').read()
     document = nlp(str)
 
     past_count = 0
@@ -15,7 +14,7 @@ def time_orientation_fn(str):
     aux_verbs = ["am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", "do", "does", "did", "will"]
     past_aux = ["was", "were", "had", "did"]
     present_aux = ["am", "is", "are", "has", "have", "do", "does"]
-    # TODO negative verbs, going
+    # TODO: negative verbs, going to, etc
 
     for token in document:
         if token == token.head:
@@ -36,8 +35,9 @@ def time_orientation_fn(str):
                     present_count += 1
 
     total_verbs = past_count + present_count + future_count
-    # print("past: ", past_count / total_verbs)
-    # print("present: ", present_count / total_verbs)
-    # print("future: ", future_count / total_verbs)
 
-    return {"past": past_count / total_verbs, "present": present_count / total_verbs, "future": future_count / total_verbs }
+    return {
+        "past": past_count / total_verbs,
+        "present": present_count / total_verbs,
+        "future": future_count / total_verbs
+    }

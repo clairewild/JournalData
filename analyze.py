@@ -5,9 +5,6 @@ import time
 from time_orientation import time_orientation_fn
 # from pronouns import pronouns_fn
 
-# time_data = time_orientation_fn()
-# pronouns_data = pronouns_fn()
-
 def analyze_json():
 
     data = {
@@ -58,9 +55,4 @@ def analyze_json():
         future = {"date": difference, "percentage": 1.0}
         data["time_orientation"]["future"].append(future)
 
-    pprint(data)
     return data
-
-# TODO:
-# store as array
-# time should be seconds from first entry
