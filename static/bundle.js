@@ -26362,6 +26362,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
@@ -26370,58 +26372,77 @@ var _victory = __webpack_require__(809);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var TimeOrientationChart = function TimeOrientationChart(_ref) {
-  var data = _ref.data;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  var past_data = data.time_orientation.past;
-  var present_data = data.time_orientation.present;
-  var future_data = data.time_orientation.future;
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-  return _react2.default.createElement(
-    _victory.VictoryChart,
-    null,
-    _react2.default.createElement(_victory.VictoryLabel, {
-      text: 'Time Orientation' }),
-    _react2.default.createElement(_victory.VictoryArea, {
-      data: past_data,
-      x: 'date',
-      y: function y(datum) {
-        return datum.percentage * 100;
-      },
-      style: {
-        data: { fill: "blue", opacity: 0.7 }
-      } }),
-    _react2.default.createElement(_victory.VictoryArea, {
-      data: present_data,
-      x: 'date',
-      y: function y(datum) {
-        return datum.percentage * 100;
-      },
-      style: {
-        data: { fill: "green", opacity: 0.7 }
-      } }),
-    _react2.default.createElement(_victory.VictoryArea, {
-      data: future_data,
-      x: 'date',
-      y: function y(datum) {
-        return datum.percentage * 100;
-      },
-      style: {
-        data: { fill: "purple", opacity: 0.7 }
-      } }),
-    _react2.default.createElement(_victory.VictoryAxis, {
-      tickValues: [1, 2, 3, 4, 5],
-      tickFormat: ["Jan", "Feb", "Mar", "Apr", "May"]
-    }),
-    _react2.default.createElement(_victory.VictoryAxis, {
-      dependentAxis: true,
-      tickFormat: ["20%", "40%", "60%", "80%", "100%"]
-    }),
-    _react2.default.createElement(_victory.VictoryLegend, {
-      data: [{ name: "Past", labels: { fill: "blue" } }, { name: "Present", labels: { fill: "green" } }, { name: "Future", labels: { fill: "purple" } }]
-    })
-  );
-};
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TimeOrientationChart = function (_React$Component) {
+  _inherits(TimeOrientationChart, _React$Component);
+
+  function TimeOrientationChart(props) {
+    _classCallCheck(this, TimeOrientationChart);
+
+    return _possibleConstructorReturn(this, (TimeOrientationChart.__proto__ || Object.getPrototypeOf(TimeOrientationChart)).call(this, props));
+  }
+
+  _createClass(TimeOrientationChart, [{
+    key: 'render',
+    value: function render() {
+      var past_data = this.props.data.time_orientation.past;
+      var present_data = this.props.data.time_orientation.present;
+      var future_data = this.props.data.time_orientation.future;
+
+      return _react2.default.createElement(
+        _victory.VictoryChart,
+        null,
+        _react2.default.createElement(_victory.VictoryLabel, {
+          text: 'Time Orientation' }),
+        _react2.default.createElement(_victory.VictoryArea, {
+          data: past_data,
+          x: 'date',
+          y: function y(datum) {
+            return datum.percentage * 100;
+          },
+          style: {
+            data: { fill: "blue", opacity: 0.7 }
+          } }),
+        _react2.default.createElement(_victory.VictoryArea, {
+          data: present_data,
+          x: 'date',
+          y: function y(datum) {
+            return datum.percentage * 100;
+          },
+          style: {
+            data: { fill: "green", opacity: 0.7 }
+          } }),
+        _react2.default.createElement(_victory.VictoryArea, {
+          data: future_data,
+          x: 'date',
+          y: function y(datum) {
+            return datum.percentage * 100;
+          },
+          style: {
+            data: { fill: "purple", opacity: 0.7 }
+          } }),
+        _react2.default.createElement(_victory.VictoryAxis, {
+          tickValues: [1, 2, 3, 4, 5],
+          tickFormat: ["Jan", "Feb", "Mar", "Apr", "May"]
+        }),
+        _react2.default.createElement(_victory.VictoryAxis, {
+          dependentAxis: true,
+          tickFormat: ["20%", "40%", "60%", "80%", "100%"]
+        }),
+        _react2.default.createElement(_victory.VictoryLegend, {
+          data: [{ name: "Past", labels: { fill: "blue" } }, { name: "Present", labels: { fill: "green" } }, { name: "Future", labels: { fill: "purple" } }]
+        })
+      );
+    }
+  }]);
+
+  return TimeOrientationChart;
+}(_react2.default.Component);
 
 exports.default = TimeOrientationChart;
 
@@ -26475,15 +26496,6 @@ var _merge2 = _interopRequireDefault(_merge);
 var _actions = __webpack_require__(203);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _state = {
-  pronouns: {},
-  time_orientation: {
-    past: [],
-    present: [],
-    future: []
-  }
-};
 
 var DataReducer = function DataReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _state;
