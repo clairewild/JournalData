@@ -1,3 +1,9 @@
+# Today
+
+- time orientation for multiple files at a time
+- plot time orientation
+- json file uploads
+
 # Journal Data
 
 ## Background
@@ -28,6 +34,7 @@ Users will be able to sign into their Dropbox account, and the app will find tex
 - React
 - Flask
 - spaCy (python library)
+- Victory (React chart library)
 - SQL Alchemy?? (ORM)
 
 ## Implementation Timeline
@@ -55,7 +62,6 @@ This article is helpful for setting up Flask: https://www.codementor.io/garethdw
 
 - sudo pip3 install -U spacy
 - sudo python3 -m spacy.en.download all --> downloads English data and models, it's 1G
-
 
 ## Links
 
