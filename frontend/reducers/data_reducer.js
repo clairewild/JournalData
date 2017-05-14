@@ -2,7 +2,16 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_DATA } from '../actions/actions';
 
-const DataReducer = (state = {}, action) => {
+const _state = {
+  pronouns: {},
+  time_orientation: {
+    past: [],
+    present: [],
+    future: []
+  }
+}
+
+const DataReducer = (state = _state, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
 
