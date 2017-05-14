@@ -1,13 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { VictoryChart, VictoryLabel, VictoryArea, VictoryAxis, VictoryLegend } from 'victory';
 
 class TimeOrientationChart extends React.Component {
-  const past_data = this.props.data.time_orientation.past;
-  const present_data = this.props.data.time_orientation.present;
-  const future_data = this.props.data.time_orientation.future;
-
+  constructor(props) {
+    super(props);
+  }
+  
   render() {
+    const past_data = this.props.data.time_orientation.past;
+    const present_data = this.props.data.time_orientation.present;
+    const future_data = this.props.data.time_orientation.future;
+
     return (
       <VictoryChart>
         <VictoryLabel
@@ -16,8 +19,8 @@ class TimeOrientationChart extends React.Component {
 
         <VictoryArea
           data={ past_data }
-          x="month"
-          y=
+          x="date"
+          y={ (datum) => datum.percentage * 100 }
           style={{
             data: {fill: "blue", opacity: 0.7}
           }}>
@@ -25,8 +28,8 @@ class TimeOrientationChart extends React.Component {
 
         <VictoryArea
           data={ present_data }
-          x="month"
-          y=
+          x="date"
+          y={ (datum) => datum.percentage * 100 }
           style={{
             data: {fill: "green", opacity: 0.7}
           }}>
@@ -34,8 +37,8 @@ class TimeOrientationChart extends React.Component {
 
         <VictoryArea
           data={ future_data }
-          x="month"
-          y=
+          x="date"
+          y={ (datum) => datum.percentage * 100 }
           style={{
             data: {fill: "purple", opacity: 0.7}
           }}>
@@ -52,7 +55,7 @@ class TimeOrientationChart extends React.Component {
         />
 
         <VictoryLegend
-          data={[{ name: "Past", labels: { fill: "blue" } } }, { name: "Present", labels: { fill: "green" } } }, { name: "Future", labels: { fill: "purple" } }}]}
+          data={[{ name: "Past", labels: { fill: "blue" } }, { name: "Present", labels: { fill: "green" } }, { name: "Future", labels: { fill: "purple" } }]}
         />
       </VictoryChart>
     );

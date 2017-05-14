@@ -1,8 +1,8 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_DATA } from '../actions/actions';
+import { RECEIVE_DATA } from '../actions/actions.js';
 
-const DataReducer = (state = {}, action) => {
+const DataReducer = (state = _state, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
 
