@@ -40993,7 +40993,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var data = [{ month: "September", profit: 35000, loss: 2000 }, { month: "October", profit: 42000, loss: 8000 }, { month: "November", profit: 55000, loss: 5000 }];
+var data1 = [{ month: "September", profit: 35000, loss: 2000 }, { month: "October", profit: 42000, loss: 8000 }, { month: "December", profit: 55000, loss: 5000 }];
+
+var data2 = [{ month: "October", profit: 2000, loss: 2000 }, { month: "November", profit: 46000, loss: 8000 }, { month: "December", profit: 50000, loss: 4000 }];
 
 var TimeOrientationChart = function (_React$Component) {
   _inherits(TimeOrientationChart, _React$Component);
@@ -41011,9 +41013,20 @@ var TimeOrientationChart = function (_React$Component) {
         _victory.VictoryChart,
         null,
         _react2.default.createElement(_victory.VictoryArea, {
-          data: data,
-          x: 'quarter',
-          y: 'earnings' })
+          data: data1,
+          x: 'month',
+          y: function y(datum) {
+            return datum.profit - datum.loss;
+          },
+          style: {
+            data: { fill: "tomato", opacity: 0.7 }
+          } }),
+        _react2.default.createElement(_victory.VictoryArea, {
+          data: data2,
+          x: 'month',
+          y: function y(datum) {
+            return datum.profit - datum.loss;
+          } })
       );
     }
   }]);
