@@ -26498,7 +26498,7 @@ var _actions = __webpack_require__(203);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var DataReducer = function DataReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _state;
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments[1];
 
   Object.freeze(state);
