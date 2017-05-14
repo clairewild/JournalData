@@ -1,5 +1,3 @@
-import json
-from pprint import pprint
 import spacy
 nlp = spacy.load('en')
 
@@ -43,22 +41,3 @@ def time_orientation_fn(str):
     # print("future: ", future_count / total_verbs)
 
     return {"past": past_count / total_verbs, "present": present_count / total_verbs, "future": future_count / total_verbs }
-
-
-def analyze_json():
-
-    with open('./corpus/diary.json') as data_file:
-        data = json.load(data_file)
-
-    entries = data["entries"]
-    data = {}
-    for entry in entries:
-        date = entry["creationDate"]
-        text = entry["text"]
-        analysis = time_orientation_fn(text)
-        data[date] = analysis
-
-    pprint(data)
-
-
-analyze_json()
