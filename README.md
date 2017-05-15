@@ -1,7 +1,7 @@
-# Today
+# Next
 
-- time orientation for multiple files at a time
-- plot time orientation
+- make plot pretty
+- word cloud
 - corpora download
 - json file uploads
 
