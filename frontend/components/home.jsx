@@ -1,6 +1,7 @@
 import React from 'react';
 
 import TimeOrientationContainer from './time_orientation_container';
+import CloudContainer from './cloud_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
+        <CloudContainer />
         <TimeOrientationContainer />
       </div>
     );
