@@ -22,11 +22,18 @@ class Cloud extends React.Component {
     }
 
     return (
-      <WordCloud
-        data={data}
-        fontSizeMapper={fontSizeMapper}
-        rotate={rotate}
-      />
+      <div id="word-cloud">
+        <WordCloud
+          data={data}
+          fontSizeMapper={fontSizeMapper}
+          rotate={rotate}
+          padding={15}
+          />
+        <div className="settings">
+          <p>Proper nouns only</p>
+          <p>All words</p>
+        </div>
+      </div>
     );
   }
 }
