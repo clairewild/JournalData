@@ -33,12 +33,19 @@ Users will be able to sign into their Dropbox account, and the app will find tex
 
 ## Implementation Priorities
 
-- Make plot pretty
-- Word cloud
-- Refactor so that pronouns.py and word_cloud.py only iterate over tokens once
-- Corpora download
-- JSON file uploads
-- Sentiment analysis
+- Before next meeting:
+  + Claire
+    - Pronouns chart
+  + Austin
+    - Word cloud select all/entities
+    - CSS
+- This weekend
+  + Make plot pretty
+  + Refactor so that pronouns.py and word_cloud.py only iterate over tokens once
+  + Parse entire diary for sample data
+  + Corpora download
+  + JSON file uploads
+  + Sentiment analysis
 
 ## Set Up
 
