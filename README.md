@@ -1,10 +1,3 @@
-# Today
-
-- time orientation for multiple files at a time
-- plot time orientation
-- corpora download
-- json file uploads
-
 # Journal Data
 
 ## Background
@@ -38,17 +31,13 @@ Users will be able to sign into their Dropbox account, and the app will find tex
 - Victory (React chart library)
 - SQL Alchemy?? (ORM)
 
-## Implementation Timeline
+## Implementation Priorities
 
-Phase 1:
-- Dropbox API
+- Make plot pretty
+- Word cloud
+- Corpora download
+- JSON file uploads
 - Sentiment analysis
-
-Phase 2:
-
-## Bonus Features
-
--
 
 ## Set Up
 

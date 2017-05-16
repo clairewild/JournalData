@@ -7,15 +7,9 @@ class TimeOrientationChart extends React.Component {
   }
 
   render() {
-    let past_data = [];
-    let present_data = [];
-    let future_data = [];
-
-    if (this.props.data) {
-      past_data = this.props.data.time_orientation.past;
-      present_data = this.props.data.time_orientation.present;
-      future_data = this.props.data.time_orientation.future;
-    }
+    const past_data = this.props.data.time_orientation.past;
+    const present_data = this.props.data.time_orientation.present;
+    const future_data = this.props.data.time_orientation.future;
 
     return (
       <VictoryChart>

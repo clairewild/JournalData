@@ -2,7 +2,15 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_DATA } from '../actions/actions.js';
 
-const DataReducer = (state = {}, action) => {
+const _state = {
+  time_orientation: {
+    past: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
+    present: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
+    future: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}]
+  }
+};
+
+const DataReducer = (state = _state, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
 
