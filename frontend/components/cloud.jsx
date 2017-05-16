@@ -26,6 +26,7 @@ class Cloud extends React.Component {
         data={data}
         fontSizeMapper={fontSizeMapper}
         rotate={rotate}
+        padding={30}
       />
     );
   }
