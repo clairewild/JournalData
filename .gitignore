@@ -18,6 +18,9 @@ htmlcov
 .coverage.*
 *,cover
 
+static/bundle.js
+static/bundle.js.map
+
 node_modules/
 bundle.js
 bundle.js.map
