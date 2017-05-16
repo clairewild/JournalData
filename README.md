@@ -1,20 +1,5 @@
 # Journal Data
 
-## Word Cloud
-
-const word_count = {
-  entities: [
-    { text: 'Hey', value: 1000 },
-    { text: 'lol', value: 200 },
-    { text: 'first impression', value: 800 },
-    { text: 'very cool', value: 1000000 },
-    { text: 'duck', value: 10 },
-  ],
-  other_words: {
-    # same thing
-  }
-}
-
 ## Background
 
 ## Inspiration
