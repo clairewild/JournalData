@@ -7,6 +7,10 @@ const _state = {
     past: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
     present: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
     future: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}]
+  },
+  word_count: {
+    entities: [],
+    other_words: []
   }
 };
 
