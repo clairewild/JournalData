@@ -1,5 +1,20 @@
 # Journal Data
 
+## Word Cloud
+
+const word_count = {
+  entities: [
+    { text: 'Hey', value: 1000 },
+    { text: 'lol', value: 200 },
+    { text: 'first impression', value: 800 },
+    { text: 'very cool', value: 1000000 },
+    { text: 'duck', value: 10 },
+  ],
+  other_words: {
+    # same thing
+  }
+}
+
 ## Background
 
 ## Inspiration
@@ -35,6 +50,7 @@ Users will be able to sign into their Dropbox account, and the app will find tex
 
 - Make plot pretty
 - Word cloud
+- Refactor so that pronouns.py and word_cloud.py only iterate over tokens once
 - Corpora download
 - JSON file uploads
 - Sentiment analysis
