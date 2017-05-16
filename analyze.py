@@ -3,6 +3,7 @@ from pprint import pprint
 import time
 
 from time_orientation import time_orientation_fn
+from word_cloud import word_cloud_fn
 # from pronouns import pronouns_fn
 
 def analyze_json():
@@ -13,7 +14,8 @@ def analyze_json():
             "present": [],
             "future": []
         },
-        "pronouns": {}
+        "pronouns": {},
+        "word_count": {}
     }
 
     with open('./corpus/diary.json') as data_file:
@@ -36,12 +38,15 @@ def analyze_json():
 
     # Append the relevant data from each entry
     # to the past, present and future arrays in the main object
+    all_text = ""
+
     for entry in entries:
         date = entry["creationDate"]
         date = time.strptime(date, '%Y-%m-%dT%H:%M:%SZ')
         difference = time.mktime(date) - time.mktime(firstDate)
 
         text = entry["text"]
+        all_text += text
         analysis = time_orientation_fn(text)
 
         past_percentage = analysis["past"]
@@ -54,5 +59,7 @@ def analyze_json():
 
         future = {"date": difference, "percentage": 1.0}
         data["time_orientation"]["future"].append(future)
+
+    data["word_count"] = word_cloud_fn(all_text)
 
     return data

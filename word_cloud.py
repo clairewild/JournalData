@@ -1,7 +1,7 @@
 import spacy
 nlp = spacy.load('en')
 
-def word_cloud(str):
+def word_cloud_fn(str):
     document = nlp(str)
     entity_count = {}
     other_word_count = {}
