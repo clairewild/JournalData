@@ -51,10 +51,6 @@ class TimeOrientationChart extends React.Component {
         </VictoryArea>
 
 
-        <VictoryAxis
-          dependentAxis
-          tickFormat={["20%", "40%", "60%", "80%", "100%"]}
-        />
 
         <VictoryLegend
           data={[{ name: "Past", labels: { fill: "blue" } }, { name: "Present", labels: { fill: "green" } }, { name: "Future", labels: { fill: "purple" } }]}

@@ -26427,10 +26427,6 @@ var TimeOrientationChart = function (_React$Component) {
           style: {
             data: { fill: "purple", opacity: 0.7 }
           } }),
-        _react2.default.createElement(_victory.VictoryAxis, {
-          dependentAxis: true,
-          tickFormat: ["20%", "40%", "60%", "80%", "100%"]
-        }),
         _react2.default.createElement(_victory.VictoryLegend, {
           data: [{ name: "Past", labels: { fill: "blue" } }, { name: "Present", labels: { fill: "green" } }, { name: "Future", labels: { fill: "purple" } }]
         })
