@@ -22,41 +22,34 @@ class TimeOrientationChart extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: "blue", opacity: 0.7}
+            data: {fill: "blue", opacity: 0.9}
           }}>
         </VictoryArea>
 
         <VictoryArea
           data={ present_data }
           x="date"
-          y={ (datum) => datum.percentage * 100 }
+          y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: "green", opacity: 0.7}
+            data: {fill: "blue", opacity: 0.6}
           }}>
         </VictoryArea>
 
         <VictoryArea
           data={ future_data }
           x="date"
-          y={ (datum) => datum.percentage * 100 }
+          y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: "purple", opacity: 0.7}
+            data: {fill: "blue", opacity: 0.3}
           }}>
         </VictoryArea>
 
-
-
         <VictoryLegend
-          data={[{ name: "Past", labels: { fill: "blue" } }, { name: "Present", labels: { fill: "green" } }, { name: "Future", labels: { fill: "purple" } }]}
-        />
+          data={[{ name: "Past", labels: { fill: "blue" } }, { name: "Present", labels: { fill: "green" } }, { name: "Future", labels: { fill: "purple" } }]}>
+        </VictoryLegend>
       </VictoryChart>
     );
   }
 }
-
-// <VictoryAxis
-//   tickValues={[1, 2, 3, 4, 5]}
-//   tickFormat={["Jan", "Feb", "Mar", "Apr", "May"]}
-// />
 
 export default TimeOrientationChart;

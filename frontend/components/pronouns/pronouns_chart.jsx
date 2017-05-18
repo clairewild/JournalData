@@ -21,30 +21,39 @@ class PronounsChart extends React.Component {
         <VictoryArea
           data={ first_person_data }
           x="date"
-          y={ (datum) => datum.percentage * 100.00 }>
+          y={ (datum) => datum.percentage * 100.00 }
+          style={{
+            data: {fill: "blue", opacity: 0.9}
+          }}>
         </VictoryArea>
 
         <VictoryArea
           data={ first_plural_data }
           x="date"
-          y={ (datum) => datum.percentage * 100.00 }>
+          y={ (datum) => datum.percentage * 100.00 }
+          style={{
+            data: {fill: "blue", opacity: 0.6}
+          }}>
         </VictoryArea>
 
         <VictoryArea
           data={ second_person_data }
           x="date"
-          y={ (datum) => datum.percentage * 100.00 }>
+          y={ (datum) => datum.percentage * 100.00 }
+          style={{
+            data: {fill: "blue", opacity: 0.3}
+          }}>
         </VictoryArea>
 
         <VictoryArea
           data={ third_person_data }
           x="date"
-          y={ (datum) => datum.percentage * 100.00 }>
+          y={ (datum) => datum.percentage * 100.00 }
+          style={{
+            data: {fill: "blue", opacity: 0.1}
+          }}>
         </VictoryArea>
-
-
       </VictoryChart>
-
     );
   }
 }
