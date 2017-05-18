@@ -4,7 +4,8 @@ import Cloud from './cloud.jsx';
 import { toggleCloud } from '../../actions/actions.js';
 
 const mapStateToProps = state => ({
-  word_count: state.data.word_count
+  word_count: state.data.word_count,
+  entities_only: state.settings.entities_only
 });
 
 const mapDispatchToProps = dispatch => ({
