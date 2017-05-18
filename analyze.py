@@ -16,10 +16,10 @@ def analyze_json():
         },
         "word_count": {},
         "pronouns": {
-            "first_person": 0,
-            "first_plural": 0,
-            "second_person": 0,
-            "third_person": 0
+            "first_person": [],
+            "first_plural": [],
+            "second_person": [],
+            "third_person": []
         }
     }
 
@@ -42,7 +42,8 @@ def analyze_json():
     firstDate = time.strptime(firstDate, '%Y-%m-%dT%H:%M:%SZ')
 
     # Append the relevant data from each entry
-    # to the past, present and future arrays in the main object
+    # to the past, present and future arrays, and different pronoun
+    # arrays in the main object
     all_text = ""
 
     for entry in entries:
@@ -52,19 +53,38 @@ def analyze_json():
 
         text = entry["text"]
         all_text += text
-        analysis = time_orientation_fn(text)
 
-        past_percentage = analysis["past"]
+        time_analysis = time_orientation_fn(text)
+        pronoun_analysis = pronouns_fn(text)
+
+        # TODO: refactor this!!?? is it too JS-like to just append an object literal? or can we use some metaprogramming?
+        past_percentage = time_analysis["past"]
         past = {"date": difference, "percentage": past_percentage}
         data["time_orientation"]["past"].append(past)
 
-        present_percentage = analysis["past"] + analysis["present"]
+        present_percentage = time_analysis["past"] + time_analysis["present"]
         present = {"date": difference, "percentage": present_percentage}
         data["time_orientation"]["present"].append(present)
 
         future = {"date": difference, "percentage": 1.0}
         data["time_orientation"]["future"].append(future)
 
+        first_person_percentage = pronoun_analysis["first_person"]
+        first_person = {"date": difference, "percentage": first_person_percentage}
+        data["pronouns"]["first_person"].append(first_person)
+
+        first_plural_percentage = pronoun_analysis["first_person"] + pronoun_analysis["first_plural"]
+        first_plural = {"date": difference, "percentage": first_plural_percentage}
+        data["pronouns"]["first_plural"].append(first_plural)
+
+        second_person_percentage = pronoun_analysis["first_person"] + pronoun_analysis["first_plural"] + pronoun_analysis["second_person"]
+        second_person = {"date": difference, "percentage": second_person_percentage}
+        data["pronouns"]["second_person"].append(second_person)
+
+        third_person = {"date": difference, "percentage": 1.0}
+        data["pronouns"]["third_person"].append(third_person)
+
+    # Pass all text from all entries to word cloud function
     data["word_count"] = word_cloud_fn(all_text)
 
     return data
