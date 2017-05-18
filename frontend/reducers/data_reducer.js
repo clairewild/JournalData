@@ -11,6 +11,12 @@ const _state = {
   word_count: {
     entities: [],
     other_words: []
+  },
+  pronouns: {
+    first_person: [],
+    first_plural: [],
+    second_person: [],
+    third_person: []
   }
 };
 

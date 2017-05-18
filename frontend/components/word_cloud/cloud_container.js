@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Cloud from './cloud.jsx';
+import Cloud from './cloud';
 
 const mapStateToProps = state => ({
   word_count: state.data.word_count

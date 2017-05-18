@@ -57,7 +57,7 @@ def analyze_json():
         time_analysis = time_orientation_fn(text)
         pronoun_analysis = pronouns_fn(text)
 
-        # TODO: refactor this!!?? is it too JS-like to just append an object literal? or can we use some metaprogramming?
+        # TODO: refactor this!!?? it's not very DRY, can we use some metaprogramming maybe?
         past_percentage = time_analysis["past"]
         past = {"date": difference, "percentage": past_percentage}
         data["time_orientation"]["past"].append(past)

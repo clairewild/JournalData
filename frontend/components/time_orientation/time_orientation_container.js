@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 
-import TimeOrientationChart from './time_orientation_chart.jsx';
+import TimeOrientationChart from './time_orientation_chart';
 
 const mapStateToProps = state => ({
-  data: state.data
+  time_orientation: state.data.time_orientation
 });
 
 export default connect(mapStateToProps, null)(TimeOrientationChart);

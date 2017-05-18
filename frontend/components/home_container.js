@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 
 import Home from './home';
-import { fetchData } from '../actions/actions.js';
+import { fetchData } from '../actions/actions';
 
+// TODO: do we even need this?
 const mapStateToProps = state => ({
   data: state.data
 });
