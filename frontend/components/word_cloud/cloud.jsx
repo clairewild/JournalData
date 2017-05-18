@@ -21,16 +21,16 @@ class Cloud extends React.Component {
     const clickable = {color: 'blue'};
     if (this.props.entities_only) {
       return (
-        <div className="settings">
-          <div><p>Proper nouns only</p></div>
-          <div onClick={this.props.toggleCloud}><p style={clickable}>All words</p></div>
+        <div className="cloud-toggle">
+          <div id='selected'><p>Proper nouns only</p></div>
+          <div onClick={this.props.toggleCloud} id='clickable'><p>All words</p></div>
         </div>
       );
     }
     return (
-      <div className="settings">
-        <div onClick={this.props.toggleCloud}><p style={clickable}>Proper nouns only</p></div>
-        <div><p>All words</p></div>
+      <div className="cloud-toggle">
+        <div onClick={this.props.toggleCloud} id='clickable'><p>Proper nouns only</p></div>
+        <div id='selected'><p>All words</p></div>
       </div>
     );
   }

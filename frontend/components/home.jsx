@@ -13,8 +13,9 @@ class Home extends React.Component {
   }
 
   render() {
+    const test = {backgroundColor: 'blue'};
     return (
-      <div>
+      <div id='home'>
         <CloudContainer />
         <TimeOrientationContainer />
       </div>
