@@ -10,6 +10,9 @@ class Cloud extends React.Component {
 
   data() {
     const entities = this.props.word_count.entities;
+    if (this.props.entities_only) {
+      return entities;
+    }
     const other_words = this.props.word_count.other_words;
     return entities.concat(other_words);
   }
