@@ -6,12 +6,17 @@ class Cloud extends React.Component {
   constructor(props) {
     super(props);
     this.data = this.data.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   data() {
     const entities = this.props.word_count.entities;
     const other_words = this.props.word_count.other_words;
     return entities.concat(other_words);
+  }
+
+  handleToggle() {
+    this.props.toggleCloud();
   }
 
   render() {
@@ -32,7 +37,7 @@ class Cloud extends React.Component {
           padding={4}
           />
         <div className="settings">
-          <p>Proper nouns only</p>
+          <p onClick={this.handleToggle}>Proper nouns only</p>
           <p>All words</p>
         </div>
       </div>
