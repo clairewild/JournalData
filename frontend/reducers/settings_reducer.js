@@ -12,7 +12,6 @@ const SettingsReducer = (state = _state, action) => {
 
   switch (action.type) {
     case TOGGLE_CLOUD:
-      console.log(action);
       newState.entities_only = !newState.entities_only;
       return newState;
     default:

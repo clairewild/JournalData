@@ -37,7 +37,7 @@ Users will be able to sign into their Dropbox account, and the app will find tex
   + Claire
     - Pronouns chart
   + Austin
-    - Word cloud select all/entities
+    - ~~Word cloud select all/entities~~
     - CSS
 - This weekend
   + Make plot pretty
