@@ -1,8 +1,7 @@
 import spacy
 nlp = spacy.load('en')
 
-def pronouns_fn():
-    str = open('./corpus/entry1.txt', 'r').read()
+def pronouns_fn(str):
     document = nlp(str)
 
     first_person_count = 0
@@ -33,8 +32,3 @@ def pronouns_fn():
         "second_person": second_person_count / total_count,
         "third_person": third_person_count / total_count
     }
-
-str = open('./corpus/entry1.txt', 'r').read()
-document = nlp(str)
-
-print(entities)

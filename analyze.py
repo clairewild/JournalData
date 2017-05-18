@@ -4,7 +4,7 @@ import time
 
 from time_orientation import time_orientation_fn
 from word_cloud import word_cloud_fn
-# from pronouns import pronouns_fn
+from pronouns import pronouns_fn
 
 def analyze_json():
 
@@ -14,8 +14,13 @@ def analyze_json():
             "present": [],
             "future": []
         },
-        "pronouns": {},
-        "word_count": {}
+        "word_count": {},
+        "pronouns": {
+            "first_person": 0,
+            "first_plural": 0,
+            "second_person": 0,
+            "third_person": 0
+        }
     }
 
     with open('./corpus/diary.json') as data_file:
