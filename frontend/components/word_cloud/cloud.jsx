@@ -10,12 +10,32 @@ class Cloud extends React.Component {
 
   data() {
     const entities = this.props.word_count.entities;
+    if (this.props.entities_only) {
+      return entities;
+    }
     const other_words = this.props.word_count.other_words;
     return entities.concat(other_words);
   }
 
-  render() {
+  toggleButtons() {
+    const clickable = {color: 'blue'};
+    if (this.props.entities_only) {
+      return (
+        <div className="cloud-toggle">
+          <div id='selected'><p>Proper nouns only</p></div>
+          <div onClick={this.props.toggleCloud} id='clickable'><p>All words</p></div>
+        </div>
+      );
+    }
+    return (
+      <div className="cloud-toggle">
+        <div onClick={this.props.toggleCloud} id='clickable'><p>Proper nouns only</p></div>
+        <div id='selected'><p>All words</p></div>
+      </div>
+    );
+  }
 
+  render() {
     // TODO: Make this dynamic
     const fontSizeMapper = word => Math.log2(word.value) * 5;
     const rotate = word => {
@@ -31,10 +51,7 @@ class Cloud extends React.Component {
           rotate={rotate}
           padding={4}
           />
-        <div className="settings">
-          <p>Proper nouns only</p>
-          <p>All words</p>
-        </div>
+        {this.toggleButtons()}
       </div>
     );
   }
