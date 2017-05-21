@@ -17,7 +17,8 @@ const _state = {
     first_plural: [],
     second_person: [],
     third_person: []
-  }
+  },
+  word_count: []
 };
 
 const DataReducer = (state = _state, action) => {

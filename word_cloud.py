@@ -5,7 +5,6 @@ def word_cloud_fn(str):
     document = nlp(str)
     entity_count = {}
     other_word_count = {}
-    total_count = 0
 
     ent_types = ["GPE", "PERSON", "LOC", "ORG", "WORK_OF_ART"]
 
@@ -17,7 +16,6 @@ def word_cloud_fn(str):
                 entity_count[ent.text] = 1
 
     for token in document:
-        total_count += 1
         if token.text not in entity_count:
             if len(token.lemma_) > 2 and token.lemma_ != "-PRON-":
                 if token.lemma_ in other_word_count:

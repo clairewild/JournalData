@@ -5,9 +5,10 @@ import time
 from time_orientation import time_orientation_fn
 from word_cloud import word_cloud_fn
 from pronouns import pronouns_fn
+from word_count import word_count_fn
 
 def analyze_json():
-
+    
     data = {
         "time_orientation": {
             "past": [],
@@ -21,6 +22,7 @@ def analyze_json():
             "second_person": [],
             "third_person": []
         }
+        "word_count": []
     }
 
     with open('./corpus/diary.json') as data_file:
@@ -56,6 +58,7 @@ def analyze_json():
 
         time_analysis = time_orientation_fn(text)
         pronoun_analysis = pronouns_fn(text)
+        count_analysis = word_count_fn(text)
 
         # TODO: refactor this!!?? it's not very DRY, can we use some metaprogramming maybe?
         past_percentage = time_analysis["past"]
@@ -83,6 +86,9 @@ def analyze_json():
 
         third_person = {"date": difference, "percentage": 1.0}
         data["pronouns"]["third_person"].append(third_person)
+
+        count = {"date": difference, "count": count_analysis}
+        data["word_count"].append(count)
 
     # Pass all text from all entries to word cloud function
     data["word_cloud"] = word_cloud_fn(all_text)
