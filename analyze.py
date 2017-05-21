@@ -8,7 +8,7 @@ from pronouns import pronouns_fn
 from word_count import word_count_fn
 
 def analyze_json():
-    
+
     data = {
         "time_orientation": {
             "past": [],
@@ -21,7 +21,7 @@ def analyze_json():
             "first_plural": [],
             "second_person": [],
             "third_person": []
-        }
+        },
         "word_count": []
     }
 
