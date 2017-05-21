@@ -27,7 +27,6 @@ const DataReducer = (state = _state, action) => {
 
   switch (action.type) {
     case RECEIVE_DATA:
-      console.log(action);
       return action.data;
     default:
       return state;
