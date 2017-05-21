@@ -1,5 +1,8 @@
+// TODO:
+// add animation
+
 import React from 'react';
-import { VictoryChart, VictoryLabel, VictoryArea, VictoryAxis, VictoryLegend } from 'victory';
+import { VictoryChart, VictoryLabel, VictoryScatter, VictoryAxis, VictoryLegend } from 'victory';
 
 class WordCount extends React.Component {
   constructor(props) {
@@ -8,28 +11,20 @@ class WordCount extends React.Component {
 
   render() {
     return (
-      <div><p>hellooooooo</p></div>
-    )
-    // return (
-    //   <VictoryChart>
-    //     <VictoryLabel
-    //       text="Time Orientation">
-    //     </VictoryLabel>
-    //
-    //     <VictoryArea
-    //       data={ past_data }
-    //       x="date"
-    //       y={ (datum) => datum.percentage * 100.00 }
-    //       style={{
-    //         data: {fill: "blue", opacity: 0.9}
-    //       }}>
-    //     </VictoryArea>
-    //
-    //     <VictoryLegend
-    //       data={[{ name: "Past", labels: { fill: "blue" } }, { name: "Present", labels: { fill: "green" } }, { name: "Future", labels: { fill: "purple" } }]}>
-    //     </VictoryLegend>
-    //   </VictoryChart>
-    // );
+      <VictoryChart>
+
+        <VictoryScatter
+          data={[
+            {month: "September", profit: 35000, loss: 2000},
+            {month: "October", profit: 42000, loss: 8000},
+            {month: "November", profit: 55000, loss: 5000}
+          ]}
+          x="month"
+          y={(datum) => datum.profit - datum.loss}
+        />
+
+      </VictoryChart>
+    );
   }
 }
 
