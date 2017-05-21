@@ -14,7 +14,7 @@
 
 Users will be able to sign into their Dropbox account, and the app will find text files synced from DayOne, and analyze their writing.  It will display various charts/graphs to visualize the data, including:
 
-- words per day
+- word count
 - time orientation
 - positivity vs. negativity
 - sentiment analysis
@@ -33,19 +33,24 @@ Users will be able to sign into their Dropbox account, and the app will find tex
 
 ## Implementation Priorities
 
-- Before next meeting:
-  + Claire
-    - Pronouns chart
-  + Austin
-    - ~~Word cloud select all/entities~~
-    - CSS
-- This weekend
-  + Make plot pretty
-  + Refactor so that pronouns.py and word_cloud.py only iterate over tokens once
+- v1 (Target: Sunday, May 28)
+  + word count
+    - total word count
+    - average words per day
+    - average words per entry
+    - average entries per day
+    - plot days vs time of day with colored dots for word count
+  + Pronoun pie chart
+  + Make plots pretty
+  + Style entire page
   + Parse entire diary for sample data
+  + Production README
+- v2
   + Corpora download
-  + JSON file uploads
   + Sentiment analysis
+  + Refactor so that pronouns.py and word_cloud.py only iterate over tokens once
+  + Host on Heroku
+  + JSON file uploads
 
 ## Set Up
 
