@@ -14,7 +14,7 @@ def analyze_json():
             "present": [],
             "future": []
         },
-        "word_count": {},
+        "word_cloud": {},
         "pronouns": {
             "first_person": [],
             "first_plural": [],
@@ -85,6 +85,6 @@ def analyze_json():
         data["pronouns"]["third_person"].append(third_person)
 
     # Pass all text from all entries to word cloud function
-    data["word_count"] = word_cloud_fn(all_text)
+    data["word_cloud"] = word_cloud_fn(all_text)
 
     return data

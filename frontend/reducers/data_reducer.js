@@ -8,7 +8,7 @@ const _state = {
     present: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
     future: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}]
   },
-  word_count: {
+  word_cloud: {
     entities: [],
     other_words: []
   },
