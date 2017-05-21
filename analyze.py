@@ -87,7 +87,7 @@ def analyze_json():
         third_person = {"date": difference, "percentage": 1.0}
         data["pronouns"]["third_person"].append(third_person)
 
-        count = {"date": difference, "count": count_analysis}
+        count = {"date": entry["creationDate"], "count": count_analysis}
         data["word_count"].append(count)
 
     # Pass all text from all entries to word cloud function
