@@ -20,13 +20,11 @@ class TimeOrientationPie extends React.Component {
             { tense: "Future", value: future_percent }
           ]}
           x="tense"
-          y="value"
-          sortKey={ ["Past", "Present", "Future"] }>
-
+          y="value">
         </VictoryPie>
-
-
       </VictoryChart>
     )
   }
 }
+
+export default TimeOrientationPie;

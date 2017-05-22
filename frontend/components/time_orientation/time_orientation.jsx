@@ -5,13 +5,19 @@ import TimeOrientationArea from './time_orientation_area';
 
 class TimeOrientation extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
-    <div>
-      <TimeOrientationPie props={ this.props.pie } />
-      <TimeOrientationArea props={ this.props.area } />
-    </div>
+    return (
+      <div>
+        <TimeOrientationArea props={ this.props.area } />
+      </div>
+    );
   }
 }
+
+export default TimeOrientation;
+
+
+// <TimeOrientationPie props={ this.props.pie } />
