@@ -37,7 +37,14 @@ def time_orientation_fn(str):
     total_verbs = past_count + present_count + future_count
 
     return {
-        "past": past_count / total_verbs,
-        "present": present_count / total_verbs,
-        "future": future_count / total_verbs
+        "percentages": {
+            "past": past_count / total_verbs,
+            "present": present_count / total_verbs,
+            "future": future_count / total_verbs
+        },
+        "counts": {
+            "past": past_count,
+            "present": present_count,
+            "future": future_count
+        }
     }

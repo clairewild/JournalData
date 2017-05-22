@@ -11,9 +11,16 @@ def analyze_json():
 
     data = {
         "time_orientation": {
-            "past": [],
-            "present": [],
-            "future": []
+            "area": {
+                "past": [],
+                "present": [],
+                "future": []
+            },
+            "pie": {
+                "past": 0,
+                "present": 0,
+                "future": 0
+            }
         },
         "word_cloud": {},
         "pronouns": {
@@ -61,16 +68,26 @@ def analyze_json():
         count_analysis = word_count_fn(text)
 
         # TODO: refactor this!!?? it's not very DRY, can we use some metaprogramming maybe?
-        past_percentage = time_analysis["past"]
-        past = {"date": difference, "percentage": past_percentage}
-        data["time_orientation"]["past"].append(past)
 
-        present_percentage = time_analysis["past"] + time_analysis["present"]
+        #######################
+        ### Time Orientation
+
+        past_percentage = time_analysis["percentages"]["past"]
+        past = {"date": difference, "percentage": past_percentage}
+        data["time_orientation"]["area"]["past"].append(past)
+        data["time_orientation"]["pie"]["past"] += time_analysis["counts"]["past"]
+
+        present_percentage = time_analysis["percentages"]["past"] + time_analysis["percentages"]["present"]
         present = {"date": difference, "percentage": present_percentage}
-        data["time_orientation"]["present"].append(present)
+        data["time_orientation"]["area"]["present"].append(present)
+        data["time_orientation"]["pie"]["present"] += time_analysis["counts"]["present"]
 
         future = {"date": difference, "percentage": 1.0}
-        data["time_orientation"]["future"].append(future)
+        data["time_orientation"]["area"]["future"].append(future)
+        data["time_orientation"]["pie"]["future"] += time_analysis["counts"]["future"]
+
+        #######################
+        ### Pronouns
 
         first_person_percentage = pronoun_analysis["first_person"]
         first_person = {"date": difference, "percentage": first_person_percentage}
