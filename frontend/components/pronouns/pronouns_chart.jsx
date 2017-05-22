@@ -1,5 +1,12 @@
 import React from 'react';
-import { VictoryChart, VictoryLabel, VictoryArea, VictoryAxis, VictoryLegend } from 'victory';
+import { VictoryChart, VictoryArea } from 'victory';
+
+const colors= {
+  firstPersonSingular: "red",
+  firstPersonPlural: "orange",
+  secondPerson: "blue",
+  thirdPerson: "green"
+}
 
 class PronounsChart extends React.Component {
   constructor(props) {
@@ -14,16 +21,13 @@ class PronounsChart extends React.Component {
 
     return (
       <VictoryChart height={200}>
-        <VictoryLabel
-          text="Pronouns">
-        </VictoryLabel>
 
         <VictoryArea
           data={ third_person_data }
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: "red", opacity: 1}
+            data: {fill: colors.thirdPerson}
           }}>
         </VictoryArea>
 
@@ -32,7 +36,7 @@ class PronounsChart extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: "yellow", opacity: 1}
+            data: {fill: colors.secondPerson}
           }}>
         </VictoryArea>
 
@@ -41,7 +45,7 @@ class PronounsChart extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: "green", opacity: 1}
+            data: {fill: colors.firstPersonPlural}
           }}>
         </VictoryArea>
 
@@ -50,14 +54,9 @@ class PronounsChart extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: "pink", opacity: 1}
+            data: {fill: colors.firstPersonSingular}
           }}>
         </VictoryArea>
-
-
-
-
-
 
       </VictoryChart>
     );

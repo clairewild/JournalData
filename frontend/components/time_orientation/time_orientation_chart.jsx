@@ -1,5 +1,11 @@
 import React from 'react';
-import { VictoryChart, VictoryLabel, VictoryArea, VictoryAxis, VictoryLegend } from 'victory';
+import { VictoryChart, VictoryArea } from 'victory';
+
+const colors = {
+  past: "red",
+  present: "yellow",
+  future: "green"
+}
 
 class TimeOrientationChart extends React.Component {
   constructor(props) {
@@ -12,17 +18,14 @@ class TimeOrientationChart extends React.Component {
     const future_data = this.props.time_orientation.future;
 
     return (
-      <VictoryChart>
-        <VictoryLabel
-          text="Time Orientation">
-        </VictoryLabel>
+      <VictoryChart height={200}>
 
         <VictoryArea
-          data={ past_data }
+          data={ future_data }
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: "blue", opacity: 0.9}
+            data: {fill: colors.future}
           }}>
         </VictoryArea>
 
@@ -31,22 +34,19 @@ class TimeOrientationChart extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: "blue", opacity: 0.6}
+            data: {fill: colors.present}
           }}>
         </VictoryArea>
 
         <VictoryArea
-          data={ future_data }
+          data={ past_data }
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: "blue", opacity: 0.3}
+            data: {fill: colors.past}
           }}>
         </VictoryArea>
 
-        <VictoryLegend
-          data={[{ name: "Past", labels: { fill: "blue" } }, { name: "Present", labels: { fill: "green" } }, { name: "Future", labels: { fill: "purple" } }]}>
-        </VictoryLegend>
       </VictoryChart>
     );
   }
