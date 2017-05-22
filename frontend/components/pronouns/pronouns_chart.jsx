@@ -1,7 +1,7 @@
 import React from 'react';
 import { VictoryChart, VictoryArea } from 'victory';
 
-const colors= {
+const colors = {
   firstPersonSingular: "red",
   firstPersonPlural: "orange",
   secondPerson: "blue",
