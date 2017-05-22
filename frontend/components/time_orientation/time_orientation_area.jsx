@@ -5,7 +5,7 @@ const colors = {
   past: "red",
   present: "yellow",
   future: "green"
-}
+};
 
 class TimeOrientationArea extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class TimeOrientationArea extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: colors.future}
+            data: { fill: colors.future }
           }}>
         </VictoryArea>
 
@@ -34,7 +34,7 @@ class TimeOrientationArea extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: colors.present}
+            data: { fill: colors.present }
           }}>
         </VictoryArea>
 
@@ -43,7 +43,7 @@ class TimeOrientationArea extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: colors.past}
+            data: { fill: colors.past }
           }}>
         </VictoryArea>
 

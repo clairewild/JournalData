@@ -1,29 +1,40 @@
 import React from 'react';
 import { VictoryChart, VictoryPie } from 'victory';
 
+const colors = {
+  "Past": "red",
+  "Present": "yellow",
+  "Future": "green"
+};
+
 class TimeOrientationPie extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const past_percent = this.props.past;
-    const present_percent = this.props.present;
-    const future_percent = this.props.future;
+    const past_count = this.props.props.past;
+    const present_count = this.props.props.present;
+    const future_count = this.props.props.future;
+    const total = past_count + present_count + future_count;
 
     return (
       <VictoryChart>
+        <p>This is the pie chart!!</p>
         <VictoryPie
           data={[
-            { tense: "Past", value: past_percent },
-            { tense: "Present", value: present_percent },
-            { tense: "Future", value: future_percent }
+            { tense: "Past", value: past_count / total },
+            { tense: "Present", value: present_count / total },
+            { tense: "Future", value: future_count / total }
           ]}
           x="tense"
-          y="value">
+          y="value"
+          style={{
+            data: { fill: datum => colors[datum.tense] }
+          }}>
         </VictoryPie>
       </VictoryChart>
-    )
+    );
   }
 }
 
