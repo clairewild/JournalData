@@ -32,17 +32,17 @@ Users will be able to sign into their Dropbox account, and the app will find tex
 ## Implementation Priorities
 
 - v1 (Target: Sunday, May 28)
-  + word count
-    - total word count
-    - average words per day
-    - average words per entry
-    - average entries per day
-    - plot days vs time of day with colored dots for word count
+  + Word count
+    - Total word count
+    - Average words per day
+    - Plot days vs time of day with colored dots for word count
+  + Punch card chart
   + Pronoun pie chart
   + Make plots pretty
   + Style entire page
   + Parse entire diary for sample data
   + Production README
+  + Python word cloud: https://github.com/amueller/word_cloud
 - v2
   + Corpora download
   + Sentiment analysis

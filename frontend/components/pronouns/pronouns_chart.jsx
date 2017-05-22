@@ -13,26 +13,17 @@ class PronounsChart extends React.Component {
     const third_person_data = this.props.pronouns.third_person;
 
     return (
-      <VictoryChart>
+      <VictoryChart height={200}>
         <VictoryLabel
           text="Pronouns">
         </VictoryLabel>
 
         <VictoryArea
-          data={ first_person_data }
+          data={ third_person_data }
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: "blue", opacity: 0.9}
-          }}>
-        </VictoryArea>
-
-        <VictoryArea
-          data={ first_plural_data }
-          x="date"
-          y={ (datum) => datum.percentage * 100.00 }
-          style={{
-            data: {fill: "blue", opacity: 0.6}
+            data: {fill: "red", opacity: 1}
           }}>
         </VictoryArea>
 
@@ -41,18 +32,33 @@ class PronounsChart extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: "blue", opacity: 0.3}
+            data: {fill: "yellow", opacity: 1}
           }}>
         </VictoryArea>
 
         <VictoryArea
-          data={ third_person_data }
+          data={ first_plural_data }
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: {fill: "blue", opacity: 0.1}
+            data: {fill: "green", opacity: 1}
           }}>
         </VictoryArea>
+
+        <VictoryArea
+          data={ first_person_data }
+          x="date"
+          y={ (datum) => datum.percentage * 100.00 }
+          style={{
+            data: {fill: "pink", opacity: 1}
+          }}>
+        </VictoryArea>
+
+
+
+
+
+
       </VictoryChart>
     );
   }
