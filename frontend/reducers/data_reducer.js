@@ -4,9 +4,14 @@ import { RECEIVE_DATA } from '../actions/actions.js';
 
 const _state = {
   time_orientation: {
-    past: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
-    present: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
-    future: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}]
+    area: {
+      past: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
+      present: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
+      future: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}]
+    },
+    pie: {
+
+    }
   },
   word_cloud: {
     entities: [],

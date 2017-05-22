@@ -1,7 +1,7 @@
 import React from 'react';
 import { VictoryChart, VictoryLabel, VictoryArea, VictoryAxis, VictoryLegend } from 'victory';
 
-class TimeOrientationChart extends React.Component {
+class TimeOrientationArea extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -52,4 +52,4 @@ class TimeOrientationChart extends React.Component {
   }
 }
 
-export default TimeOrientationChart;
+export default TimeOrientationArea;
