@@ -10,7 +10,9 @@ const _state = {
       future: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}]
     },
     pie: {
-
+      past: 1,
+      present: 0,
+      future: 0
     }
   },
   word_cloud: {

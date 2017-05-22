@@ -13,9 +13,9 @@ class TimeOrientationArea extends React.Component {
   }
 
   render() {
-    const past_data = this.props.time_orientation.past;
-    const present_data = this.props.time_orientation.present;
-    const future_data = this.props.time_orientation.future;
+    const past_data = this.props.past;
+    const present_data = this.props.present;
+    const future_data = this.props.future;
 
     return (
       <VictoryChart height={200}>
