@@ -12,7 +12,13 @@ JournalData is a full stack web application that uses natural language processin
 
 ## Instructions
 
--
+- clone the repo
+- make sure python3 is installed
+- navigate to the root directory
+- npm install
+- webpack --watch
+- python3 app.py
+- open localhost in a browser
 
 ## Technologies
 
@@ -20,6 +26,6 @@ This project is built using React.js on the frontend and Flask on the backend. W
 
 ## Future Features
 
-- Positivity / negativity
+- Positivity / negativity charts
 - Drag and drop upload
 - Support for journaling apps besides Day One
