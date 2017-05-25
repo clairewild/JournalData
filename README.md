@@ -18,11 +18,11 @@ JournalData is a full stack web application that uses natural language processin
 # Clone the repo
 git clone https://github.com/clairewild/JournalData.git
 
-# Make sure python3 installed
+# Make sure python3 is installed
 python -V
 
 # If not then download it here https://www.python.org/downloads/
-# Also install flask, spacy, and the English data and models needed for NLP
+# Also install flask, spaCy, and the English data and models needed for NLP
 pip3 install flask --user
 sudo pip3 install -U spacy
 sudo python3 -m spacy.en.download all
@@ -30,8 +30,10 @@ sudo python3 -m spacy.en.download all
 # Navigate to the root directory and install npm packages
 npm install
 
-# Run webpack and in a different window start the server on localhost
+# Run webpack
 webpack --watch
+
+# In a different window, start the python server and visit the site on localhost
 python3 app.py
 ```
 
