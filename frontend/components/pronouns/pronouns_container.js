@@ -1,9 +1,10 @@
 import { connect } from 'react-redux'
 
-import Pronouns from './pronouns_chart';
+import Pronouns from './pronouns';
 
 const mapStateToProps = state => ({
-  pronouns: state.data.pronouns
+  pie: state.data.pronouns.pie,
+  area: state.data.pronouns.area
 });
 
 export default connect(mapStateToProps, null)(Pronouns);

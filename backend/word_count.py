@@ -9,5 +9,3 @@ def word_count_fn(str):
         word_count += 1
 
     return word_count
-
-print(word_count_fn("Hi this is a test!!"))
