@@ -1,7 +1,5 @@
 # Journal Data
 
-## Background
-
 ## Inspiration
 
 - [750 Words][750words]
@@ -27,7 +25,6 @@ Users will be able to sign into their Dropbox account, and the app will find tex
 - Flask
 - spaCy (python library)
 - Victory (React chart library)
-- SQL Alchemy?? (ORM)
 
 ## Implementation Priorities
 
@@ -36,8 +33,9 @@ Users will be able to sign into their Dropbox account, and the app will find tex
     - Total word count
     - Average words per day
     - Plot days vs time of day with colored dots for word count
-  + Punch card chart
+  + Github chart
   + Pronoun pie chart
+  + Time orientation pie chart
   + Make plots pretty
   + Style entire page
   + Parse entire diary for sample data
@@ -46,29 +44,13 @@ Users will be able to sign into their Dropbox account, and the app will find tex
 - v2
   + Corpora download
   + Sentiment analysis
-  + Refactor so that pronouns.py and word_cloud.py only iterate over tokens once
+  + Refactor so that backend files only iterate over tokens once
   + Host on Heroku
   + JSON file uploads
 
-## Set Up
-
-- python -V --> you'll probably get 2.7
-- install python3 --> https://www.python.org/downloads/ (just click the button)
-- sudo easy_install pip --> the python package installer, might not need to run this command b/c should come with python
-- pip3 install flask --user
-- npm install
-- python3 app.py --> to run project on localhost
-
-This article is helpful for setting up Flask: https://www.codementor.io/garethdwyer/flask-vs-django-why-flask-might-be-better-4xs7mdf8v
-
-- sudo pip3 install -U spacy
-- sudo python3 -m spacy.en.download all --> downloads English data and models, it's 1G
-
 ## Links
-
 - http://textminingonline.com/getting-started-with-spacy
 - http://textminingonline.com/getting-started-with-textblob
-
 - https://nicschrading.com/project/Intro-to-NLP-with-spaCy
 - http://www.ef.edu/english-resources/english-grammar/determiners/ (see determiners.png)
 - http://stackoverflow.com/questions/40288323/what-do-spacys-part-of-speech-and-dependency-tags-mean
