@@ -3,6 +3,25 @@ import merge from 'lodash/merge';
 import { RECEIVE_DATA } from '../actions/actions.js';
 
 const _state = {
+  word_count: [],
+  word_cloud: {
+    entities: [],
+    other_words: []
+  },
+  pronouns: {
+    area: {
+      first_person: [],
+      first_plural: [],
+      second_person: [],
+      third_person: []
+    },
+    pie: {
+      first_person: 1,
+      first_plural: 0,
+      second_person: 0,
+      third_person: 0
+    }
+  },
   time_orientation: {
     area: {
       past: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
@@ -14,24 +33,7 @@ const _state = {
       present: 0,
       future: 0
     }
-  },
-  word_cloud: {
-    entities: [],
-    other_words: []
-  },
-  pronouns: {
-    first_person: [],
-    first_plural: [],
-    second_person: [],
-    third_person: [],
-    pie: {
-      first_person: 1,
-      first_plural: 0,
-      second_person: 0,
-      third_person: 0
-    }
-  },
-  word_count: []
+  }
 };
 
 const DataReducer = (state = _state, action) => {

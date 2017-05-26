@@ -11,8 +11,8 @@ class Pronouns extends React.Component {
   render() {
     return (
       <div>
-        <PronounsArea area={ this.props.area } />
         <PronounsPie pie={ this.props.pie } />
+        <PronounsArea area={ this.props.area } />
       </div>
     );
   }

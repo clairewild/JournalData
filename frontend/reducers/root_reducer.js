@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import DataReducer from './data_reducer';
 import SettingsReducer from './settings_reducer';
 
