@@ -1,10 +1,12 @@
 import React from 'react';
 import { VictoryChart, VictoryArea } from 'victory';
 
+import COLORS from '../colors';
+
 const colors = {
-  past: "red",
-  present: "yellow",
-  future: "green"
+  past: COLORS.red,
+  present: COLORS.yellow,
+  future: COLORS.lightGreen
 };
 
 class TimeOrientationArea extends React.Component {

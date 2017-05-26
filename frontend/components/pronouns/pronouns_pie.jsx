@@ -1,11 +1,13 @@
 import React from 'react';
 import { VictoryPie } from 'victory';
 
+import COLORS from '../colors';
+
 const colors = {
-  "First Person": "red",
-  "First Plural": "yellow",
-  "Second Person": "green",
-  "Third Person": "blue"
+  "First Person": COLORS.green,
+  "First Plural": COLORS.orange,
+  "Second Person": COLORS.lightBlue,
+  "Third Person": COLORS.blue
 };
 
 class PronounsPie extends React.Component {

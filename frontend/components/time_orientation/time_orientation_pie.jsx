@@ -1,10 +1,12 @@
 import React from 'react';
 import { VictoryPie } from 'victory';
 
+import COLORS from '../colors';
+
 const colors = {
-  "Past": "red",
-  "Present": "yellow",
-  "Future": "green"
+  "Past": COLORS.red,
+  "Present": COLORS.yellow,
+  "Future": COLORS.lightGreen
 };
 
 class TimeOrientationPie extends React.Component {

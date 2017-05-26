@@ -1,11 +1,13 @@
 import React from 'react';
 import { VictoryChart, VictoryArea } from 'victory';
 
+import COLORS from '../colors';
+
 const colors = {
-  firstPersonSingular: "red",
-  firstPersonPlural: "orange",
-  secondPerson: "blue",
-  thirdPerson: "green"
+  firstPersonSingular: COLORS.green,
+  firstPersonPlural: COLORS.orange,
+  secondPerson: COLORS.lightBlue,
+  thirdPerson: COLORS.blue
 };
 
 class PronounsArea extends React.Component {
