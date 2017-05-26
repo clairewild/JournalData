@@ -11,9 +11,9 @@ class TimeOrientation extends React.Component {
   render() {
     return (
       <div>
-        <TimeOrientationArea props={ this.props.area } />
-        <TimeOrientationPie props={ this.props.pie } />
-    </div>
+        <TimeOrientationPie pie={ this.props.pie } />
+        <TimeOrientationArea area={ this.props.area } />
+      </div>
     );
   }
 }

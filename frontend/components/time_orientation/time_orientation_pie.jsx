@@ -13,14 +13,13 @@ class TimeOrientationPie extends React.Component {
   }
 
   render() {
-    const past_count = this.props.props.past;
-    const present_count = this.props.props.present;
-    const future_count = this.props.props.future;
+    const past_count = this.props.pie.past;
+    const present_count = this.props.pie.present;
+    const future_count = this.props.pie.future;
     const total = past_count + present_count + future_count;
 
     return (
       <VictoryChart>
-        <p>This is the pie chart!!</p>
         <VictoryPie
           data={[
             { tense: "Past", value: past_count / total },

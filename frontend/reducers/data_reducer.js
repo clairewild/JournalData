@@ -23,7 +23,13 @@ const _state = {
     first_person: [],
     first_plural: [],
     second_person: [],
-    third_person: []
+    third_person: [],
+    pie: {
+      first_person: 1,
+      first_plural: 0,
+      second_person: 0,
+      third_person: 0
+    }
   },
   word_count: []
 };
