@@ -1,5 +1,5 @@
 import React from 'react';
-import { VictoryPie, VictoryLabel } from 'victory';
+import { VictoryPie, VictoryTooltip } from 'victory';
 
 import COLORS from '../colors';
 
@@ -29,31 +29,10 @@ class TimeOrientationPie extends React.Component {
         ]}
         x="tense"
         y="value"
-        labels={ datum => `${datum.tense}: ${Math.round(datum.value * 100)}%` }
-        events={[
-          {
-            target: "data",
-            eventKey: [0, 2, 4],
-            eventHandlers: {
-              onMouseOver: () => {
-                return [{
-                  target: "labels",
-                  mutation: (props) => ({
-                    style: Object.assign({}, props.style, {fill: "orange"})
-                  })
-                }];
-              },
-              onMouseOut: () => {
-                return [{
-                  target: "labels",
-                  mutation: (props) => ({
-                    style: Object.assign({}, props.style, {fill: "black"})
-                  })
-                }];
-              }
-            }
-          }
-        ]}
+        labels={datum => `${datum.tense}: ${Math.round(datum.value * 100)}%`}
+        labelComponent={<VictoryTooltip />}
+        labelRadius={50}
+
         style={{
           data: { fill: datum => colors[datum.tense] }
         }}>
@@ -61,7 +40,5 @@ class TimeOrientationPie extends React.Component {
     );
   }
 }
-
-
 
 export default TimeOrientationPie;
