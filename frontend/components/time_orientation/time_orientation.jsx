@@ -10,7 +10,7 @@ class TimeOrientation extends React.Component {
   }
 
   render() {
-    let max;
+    let max = "present";
     Object.keys(this.props.pie).forEach(key => {
       if (this.props.pie[key] > this.props.pie[max]) {
         max = key;

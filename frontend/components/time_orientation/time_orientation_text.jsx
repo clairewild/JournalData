@@ -8,18 +8,20 @@ class TimeOrientationText extends React.Component {
   }
 
   render() {
-    const legend = Object.keys(timeColors).forEach(key => (
+    let tenses = ["past", "present", "future"];
+    tenses = tenses.filter(tense => tense !== this.props.max);
+
+    const legend = Object.keys(timeColors).map(key => (
       <li>
-        <div style={ { backgroundColor: timeColors[key] } }></div>
+        <div className="legend-div" style={ { backgroundColor: timeColors[key] } }></div>
         <p>{ key }</p>
       </li>
     ));
-    console.log(this.props.max);
 
     return (
       <div>
         <h3>Time Orientation</h3>
-        <p>{ `Verb tense analysis shows you're more focused on the ${this.props.max} than on the ${this.props.second} or ${this.props.least}.` }</p>
+        <p>{ `Verb tense analysis shows you're more focused on the ${this.props.max} than on the ${tenses[0]} or ${tenses[1]}.` }</p>
         <ul>
           { legend }
         </ul>
