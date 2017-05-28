@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Nav from './nav';
+
 import WordCountContainer from './word_count/word_count_container';
 import CloudContainer from './word_cloud/cloud_container';
 import PronounsContainer from './pronouns/pronouns_container';
@@ -18,6 +20,7 @@ class Home extends React.Component {
     const test = {backgroundColor: "blue"};
     return (
       <div id="home">
+        <Nav />
         <WordCountContainer />
         <CloudContainer />
         <PronounsContainer />

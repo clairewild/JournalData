@@ -1,4 +1,5 @@
 @import url(reset.css);
+@import url(nav.css);
 
 .cloud-toggle {
   display: flex;

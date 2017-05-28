@@ -1,0 +1,68 @@
+#nav {
+  position: fixed;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background-color: black;
+  z-index: 20;
+  margin: 0;
+  padding: 0 12px 0 0;
+  height: 80px;
+  width: 100%;
+}
+
+#nav-left {
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+
+  margin: 0;
+  padding: 0 0 0 12px;
+}
+
+#nav-left > * {
+  margin: 0 24px;
+}
+
+#nav-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+
+  padding: 0 12px 0 0;
+}
+
+#nav-right > * {
+  margin: 0 24px;
+}
+
+#nav-right > *:hover, #nav-left > *:hover {
+  cursor: pointer;
+}
+
+#nav h1, h2 {
+  color: white;
+}
+
+#nav h1 {
+  font-size: 50px;
+}
+
+#nav h2 {
+  font-size: 28px;
+}
+
+#nav img {
+  height: 52px;
+  width: 52px;
+}
+
+.github:hover {
+  content: url("http://res.cloudinary.com/oblaka/image/upload/v1493828482/github_uanjms.png");
+}
