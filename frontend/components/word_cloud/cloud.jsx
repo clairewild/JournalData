@@ -18,18 +18,18 @@ class Cloud extends React.Component {
   }
 
   toggleButtons() {
-    const clickable = {color: 'blue'};
+    const clickable = { color: 'blue' };
     if (this.props.entities_only) {
       return (
         <div className="cloud-toggle">
           <div id='selected'><p>Proper nouns only</p></div>
-          <div onClick={this.props.toggleCloud} id='clickable'><p>All words</p></div>
+          <div onClick={ this.props.toggleCloud } id='clickable'><p>All words</p></div>
         </div>
       );
     }
     return (
       <div className="cloud-toggle">
-        <div onClick={this.props.toggleCloud} id='clickable'><p>Proper nouns only</p></div>
+        <div onClick={ this.props.toggleCloud } id='clickable'><p>Proper nouns only</p></div>
         <div id='selected'><p>All words</p></div>
       </div>
     );
@@ -45,13 +45,17 @@ class Cloud extends React.Component {
 
     return (
       <div id="word-cloud">
+        <div>
+          <h3>Word Frequency</h3>
+          { this.toggleButtons() }
+        </div>
+
         <WordCloud
-          data={this.data()}
-          fontSizeMapper={fontSizeMapper}
-          rotate={rotate}
-          padding={4}
-          />
-        {this.toggleButtons()}
+          data={ this.data() }
+          fontSizeMapper={ fontSizeMapper }
+          rotate={ rotate }
+          padding={ 4 }>
+        </WordCloud>
       </div>
     );
   }
