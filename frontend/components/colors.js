@@ -9,4 +9,15 @@ const COLORS = {
   green: "#08C578"
 };
 
-export default COLORS;
+export const timeColors = {
+  "Past": COLORS.red,
+  "Present": COLORS.yellow,
+  "Future": COLORS.lightGreen
+};
+
+export const pronounColors = {
+  "First Person": COLORS.green,
+  "First Plural": COLORS.orange,
+  "Second Person": COLORS.lightBlue,
+  "Third Person": COLORS.blue
+};

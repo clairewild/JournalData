@@ -1,14 +1,7 @@
 import React from 'react';
 import { VictoryChart, VictoryArea } from 'victory';
 
-import COLORS from '../colors';
-
-const colors = {
-  firstPersonSingular: COLORS.green,
-  firstPersonPlural: COLORS.orange,
-  secondPerson: COLORS.lightBlue,
-  thirdPerson: COLORS.blue
-};
+import { pronounColors } from '../colors';
 
 class PronounsArea extends React.Component {
   constructor(props) {
@@ -29,7 +22,7 @@ class PronounsArea extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: { fill: colors.thirdPerson }
+            data: { fill: pronounColors["Third Person"] }
           }}>
         </VictoryArea>
 
@@ -38,7 +31,7 @@ class PronounsArea extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: { fill: colors.secondPerson }
+            data: { fill: pronounColors["Second Person"] }
           }}>
         </VictoryArea>
 
@@ -47,7 +40,7 @@ class PronounsArea extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: { fill: colors.firstPersonPlural }
+            data: { fill: pronounColors["First Plural"] }
           }}>
         </VictoryArea>
 
@@ -56,7 +49,7 @@ class PronounsArea extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: { fill: colors.firstPersonSingular }
+            data: { fill: pronounColors["First Person"] }
           }}>
         </VictoryArea>
 

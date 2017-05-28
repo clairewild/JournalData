@@ -1,13 +1,7 @@
 import React from 'react';
-import { VictoryPie, VictoryLabel } from 'victory';
+import { VictoryPie } from 'victory';
 
-import COLORS from '../colors';
-
-const colors = {
-  "Past": COLORS.red,
-  "Present": COLORS.yellow,
-  "Future": COLORS.lightGreen
-};
+import { timeColors } from '../colors';
 
 class TimeOrientationPie extends React.Component {
   constructor(props) {
@@ -33,7 +27,6 @@ class TimeOrientationPie extends React.Component {
         events={[
           {
             target: "data",
-            eventKey: [0, 2, 4],
             eventHandlers: {
               onMouseOver: () => {
                 return [{
@@ -55,7 +48,7 @@ class TimeOrientationPie extends React.Component {
           }
         ]}
         style={{
-          data: { fill: datum => colors[datum.tense] }
+          data: { fill: datum => timeColors[datum.tense] }
         }}>
       </VictoryPie>
     );

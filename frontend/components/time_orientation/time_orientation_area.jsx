@@ -1,13 +1,7 @@
 import React from 'react';
 import { VictoryChart, VictoryArea } from 'victory';
 
-import COLORS from '../colors';
-
-const colors = {
-  past: COLORS.red,
-  present: COLORS.yellow,
-  future: COLORS.lightGreen
-};
+import { timeColors } from '../colors';
 
 class TimeOrientationArea extends React.Component {
   constructor(props) {
@@ -27,7 +21,7 @@ class TimeOrientationArea extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: { fill: colors.future }
+            data: { fill: timeColors["Future"] }
           }}>
         </VictoryArea>
 
@@ -36,7 +30,7 @@ class TimeOrientationArea extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: { fill: colors.present }
+            data: { fill: timeColors["Present"] }
           }}>
         </VictoryArea>
 
@@ -45,7 +39,7 @@ class TimeOrientationArea extends React.Component {
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
-            data: { fill: colors.past }
+            data: { fill: timeColors["Past"] }
           }}>
         </VictoryArea>
 
