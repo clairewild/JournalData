@@ -1,5 +1,5 @@
 import React from 'react';
-import { VictoryPie } from 'victory';
+import { VictoryPie, VictoryTooltip } from 'victory';
 
 import { pronounColors } from '../colors';
 
@@ -25,7 +25,9 @@ class PronounsPie extends React.Component {
         ]}
         x="person"
         y="value"
-        labels={ [] }
+        labels={datum => `${datum.person}: ${Math.round(datum.value * 100)}%`}
+        labelComponent={<VictoryTooltip />}
+        labelRadius={50}
         style={{
           data: { fill: datum => pronounColors[datum.person] }
         }}>
