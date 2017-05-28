@@ -32,6 +32,7 @@ class PronounsPie extends React.Component {
         ]}
         x="person"
         y="value"
+        labels={ [] }
         style={{
           data: { fill: datum => colors[datum.person] }
         }}>

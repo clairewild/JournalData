@@ -1,5 +1,5 @@
 import React from 'react';
-import { VictoryPie } from 'victory';
+import { VictoryPie, VictoryLabel } from 'victory';
 
 import COLORS from '../colors';
 
@@ -29,6 +29,8 @@ class TimeOrientationPie extends React.Component {
         ]}
         x="tense"
         y="value"
+        labels={ datum => `${datum.tense}: ${Math.round(datum.value * 100)}%` }
+
         style={{
           data: { fill: datum => colors[datum.tense] }
         }}>
@@ -36,5 +38,11 @@ class TimeOrientationPie extends React.Component {
     );
   }
 }
+
+// events={ [{
+//   target="lables"
+//   eventKey=
+//   eventHandlers=
+// }] }
 
 export default TimeOrientationPie;
