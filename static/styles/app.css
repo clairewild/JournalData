@@ -1,24 +1,9 @@
 @import url(reset.css);
 @import url(nav.css);
+@import url(elements.css);
+@import url(word-cloud.css);
 
-.cloud-toggle {
+#home {
   display: flex;
-  flex-direction: row;
-}
-
-.cloud-toggle div {
-  margin: 8px;
-}
-
-
-.cloud-toggle > #clickable > p {
-  color: blue;
-}
-
-.cloud-toggle > #clickable:hover {
-  cursor: pointer;
-}
-
-.cloud-toggle > #selected > p {
-  /*font-weight: bold;*/
+  flex-direction: column;
 }

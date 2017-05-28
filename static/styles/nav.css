@@ -1,3 +1,8 @@
+#nav-buffer {
+  height: 80px;
+  width: 10px;
+}
+
 #nav {
   position: fixed;
 

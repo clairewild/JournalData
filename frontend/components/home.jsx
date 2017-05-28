@@ -17,17 +17,39 @@ class Home extends React.Component {
   }
 
   render() {
-    const test = {backgroundColor: "blue"};
     return (
       <div id="home">
+
         <Nav />
-        <WordCountContainer />
-        <CloudContainer />
-        <PronounsContainer />
-        <TimeOrientationContainer />
+        <div id="nav-buffer"></div>
+
+        <div className="full-width-element" id="full-width-cloud">
+          <div className="inner-element" id="inner-cloud">
+            <CloudContainer />
+          </div>
+        </div>
+
+        <div className="full-width-element" id="full-width-pronouns">
+          <div className="inner-element" id="inner-pronouns">
+            <PronounsContainer />
+          </div>
+        </div>
+
+        <div className="full-width-element" id="full-width-time-orientation">
+          <div className="inner-element" id="inner-time-orientation">
+            <TimeOrientationContainer />
+          </div>
+        </div>
+
       </div>
     );
   }
 }
 
 export default Home;
+
+// <div className="full-width-element" id="full-width-word-count">
+//   <div className="inner-element" id="inner-word-count">
+//     <WordCountContainer />
+//   </div>
+// </div>
