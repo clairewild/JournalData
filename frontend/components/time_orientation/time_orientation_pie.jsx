@@ -30,7 +30,30 @@ class TimeOrientationPie extends React.Component {
         x="tense"
         y="value"
         labels={ datum => `${datum.tense}: ${Math.round(datum.value * 100)}%` }
-
+        events={[
+          {
+            target: "data",
+            eventKey: [0, 2, 4],
+            eventHandlers: {
+              onMouseOver: () => {
+                return [{
+                  target: "labels",
+                  mutation: (props) => ({
+                    style: Object.assign({}, props.style, {fill: "orange"})
+                  })
+                }];
+              },
+              onMouseOut: () => {
+                return [{
+                  target: "labels",
+                  mutation: (props) => ({
+                    style: Object.assign({}, props.style, {fill: "black"})
+                  })
+                }];
+              }
+            }
+          }
+        ]}
         style={{
           data: { fill: datum => colors[datum.tense] }
         }}>
@@ -39,10 +62,6 @@ class TimeOrientationPie extends React.Component {
   }
 }
 
-// events={ [{
-//   target="lables"
-//   eventKey=
-//   eventHandlers=
-// }] }
+
 
 export default TimeOrientationPie;
