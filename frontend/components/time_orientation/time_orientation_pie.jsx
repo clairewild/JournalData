@@ -1,13 +1,11 @@
 import React from 'react';
+<<<<<<< HEAD
 import { VictoryPie, VictoryTooltip } from 'victory';
+=======
+import { VictoryPie } from 'victory';
+>>>>>>> debe07ed5803417743a9396ded8cf199f8cdf24d
 
-import COLORS from '../colors';
-
-const colors = {
-  "Past": COLORS.red,
-  "Present": COLORS.yellow,
-  "Future": COLORS.lightGreen
-};
+import { timeColors } from '../colors';
 
 class TimeOrientationPie extends React.Component {
   constructor(props) {
@@ -34,7 +32,7 @@ class TimeOrientationPie extends React.Component {
         labelRadius={50}
 
         style={{
-          data: { fill: datum => colors[datum.tense] }
+          data: { fill: datum => timeColors[datum.tense] }
         }}>
       </VictoryPie>
     );

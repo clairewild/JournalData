@@ -1,14 +1,7 @@
 import React from 'react';
 import { VictoryPie, VictoryTooltip } from 'victory';
 
-import COLORS from '../colors';
-
-const colors = {
-  "First Person": COLORS.green,
-  "First Plural": COLORS.orange,
-  "Second Person": COLORS.lightBlue,
-  "Third Person": COLORS.blue
-};
+import { pronounColors } from '../colors';
 
 class PronounsPie extends React.Component {
   constructor(props) {
@@ -36,7 +29,7 @@ class PronounsPie extends React.Component {
         labelComponent={<VictoryTooltip />}
         labelRadius={50}
         style={{
-          data: { fill: datum => colors[datum.person] }
+          data: { fill: datum => pronounColors[datum.person] }
         }}>
       </VictoryPie>
     );
