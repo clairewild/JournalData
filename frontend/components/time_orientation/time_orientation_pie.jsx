@@ -1,9 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
 import { VictoryPie, VictoryTooltip } from 'victory';
-=======
-import { VictoryPie } from 'victory';
->>>>>>> debe07ed5803417743a9396ded8cf199f8cdf24d
 
 import { timeColors } from '../colors';
 
