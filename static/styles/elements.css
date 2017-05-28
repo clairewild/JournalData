@@ -1,0 +1,37 @@
+.full-width-element {
+  margin: 0;
+  padding: 72px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-element {
+  background-color: white;
+  max-width: 950px;
+  width: 950px;
+}
+
+/* //////////////////////////////////
+//
+// Comment-out everything below
+// to disable full-width background colors
+//
+////////////////////////////////// */
+
+#full-width-word-count {
+  background-color: orange;
+}
+
+#full-width-cloud {
+  background-color: blue;
+}
+
+#full-width-pronouns {
+  background-color: yellow;
+}
+
+#full-width-time-orientation {
+  background-color: pink;
+}

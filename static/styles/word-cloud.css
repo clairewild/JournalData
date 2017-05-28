@@ -1,0 +1,20 @@
+.cloud-toggle {
+  display: flex;
+  flex-direction: row;
+}
+
+.cloud-toggle div {
+  margin: 8px;
+}
+
+.cloud-toggle > #clickable > p {
+  color: blue;
+}
+
+.cloud-toggle > #clickable:hover {
+  cursor: pointer;
+}
+
+.cloud-toggle > #selected > p {
+  /*font-weight: bold;*/
+}
