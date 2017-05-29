@@ -8,9 +8,26 @@
   flex-direction: column;
 }
 
+h3 {
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
 .custom-label {
   z-index: 100;
   background-color: blue;
   height: 80px;
   width: 200px;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.legend-div {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
 }
