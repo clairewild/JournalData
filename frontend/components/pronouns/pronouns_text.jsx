@@ -19,7 +19,7 @@ class PronounColors extends React.Component {
     ));
 
     return (
-      <div>
+      <div className="text-area">
         <h3>Pronouns</h3>
         <p>{ `You tend to use ${maxPronouns} more frequently than ${minPronouns}.`}</p>
         <ul className="legend">

@@ -19,8 +19,11 @@ class TimeOrientation extends React.Component {
 
     return (
       <div>
-        <TimeOrientationText max={ max }/>
-        <TimeOrientationPie pie={ this.props.pie } />
+        <div className="pie-with-text">
+          <TimeOrientationText max={ max } />
+          <TimeOrientationPie pie={ this.props.pie } clasName="pie-chart"/>
+        </div>
+
         <TimeOrientationArea area={ this.props.area } />
       </div>
     );

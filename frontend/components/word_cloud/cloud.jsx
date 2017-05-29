@@ -45,7 +45,7 @@ class Cloud extends React.Component {
 
     return (
       <div id="word-cloud">
-        <div>
+        <div className="text-area">
           <h3>Word Frequency</h3>
           { this.toggleButtons() }
         </div>
