@@ -37,6 +37,10 @@ def analyze_json():
                 "present": 0,
                 "future": 0
             }
+        },
+        "date": {
+            "min": None,
+            "max": None
         }
     }
 
@@ -48,6 +52,7 @@ def analyze_json():
     # Calculate the first date in the dict
     # so we can calculate seconds passed for each entry
     firstDate = None
+    lastDate = None
     for entry in entries:
         date = entry["creationDate"]
 
@@ -56,6 +61,15 @@ def analyze_json():
 
         if date < firstDate:
             firstDate = date
+
+        if lastDate == None:
+            lastDate = date
+
+        if date > lastDate:
+            lastDate = date
+
+    data["date"]["min"] = firstDate
+    data["date"]["max"] = lastDate
 
     firstDate = time.strptime(firstDate, '%Y-%m-%dT%H:%M:%SZ')
 

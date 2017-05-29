@@ -33,6 +33,10 @@ const _state = {
       present: 0,
       future: 0
     }
+  },
+  date: {
+    min: null,
+    max: null
   }
 };
 
