@@ -18,12 +18,24 @@ class Cloud extends React.Component {
   }
 
   toggleButtons() {
-    const clickable = { color: 'blue' };
+    // const clickable = { color: 'blue' };
     if (this.props.entities_only) {
       return (
         <div className="cloud-toggle">
           <div id='selected'><p>Proper nouns only</p></div>
           <div onClick={ this.props.toggleCloud } id='clickable'><p>All words</p></div>
+
+          // TODO: create 2 actions, one for each toggle, get rid of entities_only
+          <label className="switch" onClick={ this.props.toggleCloud }>
+              <input type="checkbox"></input>
+              <div className="slider"></div>
+          </label>
+
+          <label className="switch">
+              <input type="checkbox"></input>
+              <div className="slider"></div>
+          </label>
+
         </div>
       );
     }
