@@ -20,7 +20,7 @@ class TimeOrientationArea extends React.Component {
     const last_date = this.props.date.max;
     const first_moment = Moment(first_date)
     const last_moment = Moment(last_date)
-    const diff = last_moment.diff(first_moment, 'days')
+    // const diff = first_moment.diff(last_moment, 'days')
 
     return (
       <VictoryChart height={ 200 }>
@@ -31,19 +31,14 @@ class TimeOrientationArea extends React.Component {
           tickCount={5}
           tickFormat={
             (x) => {
-              console.log(x);
-              const moment = Moment(first_date).add(x, 'second');
-              const year = moment.year();
-              if (diff > 1825 ) {
-                return `${year}`;
-              } else if (diff > 150) {
-                const month = moment.month();
-                return `${year}-${month}`;
-              } else {
-                const month = moment.month();
-                const day = moment.day();
-                return `${year}-${month}-${day}`;
-              }
+              console.log(Moment("2016-01-01").toString());
+              console.log(Moment("2016-01-01").month());
+              console.log(`\ntick: ${x}`);
+              console.log(first_moment.toString());
+              const newMoment = first_moment.clone();
+              newMoment.add(x, 'seconds');
+              console.log(newMoment.toString());
+              return `${newMoment.year()}-${newMoment.month()+1}-${newMoment.date()}`;
             }
           } />
 
@@ -80,3 +75,16 @@ class TimeOrientationArea extends React.Component {
 }
 
 export default TimeOrientationArea;
+
+
+// console.log(`\nlog tick ${x}`);
+// console.log(`first_date: ${first_date}`);
+// const moment = first_moment.add(x, 'seconds');
+// console.log(`moment: ${moment}`);
+// const year = moment.year();
+// const month = moment.month();
+// const day = moment.day();
+// let str = `${year}-${month}-${day}`;
+// console.log(str);
+// return `${x}`
+// return str;

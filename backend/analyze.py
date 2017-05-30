@@ -51,27 +51,32 @@ def analyze_json():
 
     # Calculate the first date in the dict
     # so we can calculate seconds passed for each entry
-    firstDate = None
-    lastDate = None
+    first_date = None
+    last_date = None
     for entry in entries:
         date = entry["creationDate"]
+        print(date)
 
-        if firstDate == None:
-            firstDate = date
+        if first_date == None:
+            first_date = date
 
-        if date < firstDate:
-            firstDate = date
+        if date < first_date:
+            first_date = date
 
-        if lastDate == None:
-            lastDate = date
+        if last_date == None:
+            last_date = date
 
-        if date > lastDate:
-            lastDate = date
+        if date > last_date:
+            last_date = date
 
-    data["date"]["min"] = firstDate
-    data["date"]["max"] = lastDate
+    data["date"]["min"] = first_date
+    data["date"]["max"] = last_date
+    print("\n\nfirst_date:")
+    print(first_date)
+    print("\n\nlast_date")
+    print(last_date)
 
-    firstDate = time.strptime(firstDate, '%Y-%m-%dT%H:%M:%SZ')
+    first_date = time.strptime(first_date, '%Y-%m-%dT%H:%M:%SZ')
 
     all_text = ""
 
@@ -79,7 +84,7 @@ def analyze_json():
     for entry in entries:
         date = entry["creationDate"]
         date = time.strptime(date, '%Y-%m-%dT%H:%M:%SZ')
-        difference = time.mktime(date) - time.mktime(firstDate)
+        difference = time.mktime(date) - time.mktime(first_date)
 
         text = entry["text"]
         all_text += text
