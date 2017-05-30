@@ -19,7 +19,7 @@ class Pronouns extends React.Component {
           <PronounsText max={ maxFirstTense } />
         </div>
 
-        <PronounsArea area={ this.props.area } />
+        <PronounsArea area={ this.props.area } date={ this.props.date } />
       </div>
     );
   }
