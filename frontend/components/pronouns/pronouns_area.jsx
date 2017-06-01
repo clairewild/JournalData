@@ -1,5 +1,6 @@
 import React from 'react';
-import { VictoryChart, VictoryArea } from 'victory';
+import { VictoryChart, VictoryArea, VictoryAxis } from 'victory';
+import Moment from 'moment'
 
 import { pronounColors } from '../colors';
 
@@ -13,9 +14,28 @@ class PronounsArea extends React.Component {
     const first_plural_data = this.props.area.first_plural;
     const second_person_data = this.props.area.second_person;
     const third_person_data = this.props.area.third_person;
+    const first_date = this.props.date.min;
+    const first_moment = Moment(first_date)
 
     return (
       <VictoryChart height={ 200 }>
+
+        <VictoryAxis
+          scale="date"
+          standalone={false}
+          tickCount={5}
+          tickFormat={
+            (x) => {
+              console.log(Moment("2016-01-01").toString());
+              console.log(Moment("2016-01-01").month());
+              console.log(`\ntick: ${x}`);
+              console.log(first_moment.toString());
+              const newMoment = first_moment.clone();
+              newMoment.add(x, 'seconds');
+              console.log(newMoment.toString());
+              return `${newMoment.year()}-${newMoment.month()+1}-${newMoment.date()}`;
+            }
+          } />
 
         <VictoryArea
           data={ third_person_data }

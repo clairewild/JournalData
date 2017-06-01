@@ -17,10 +17,7 @@ class TimeOrientationArea extends React.Component {
     const present_data = this.props.area.present;
     const future_data = this.props.area.future;
     const first_date = this.props.date.min;
-    const last_date = this.props.date.max;
     const first_moment = Moment(first_date)
-    const last_moment = Moment(last_date)
-    // const diff = first_moment.diff(last_moment, 'days')
 
     return (
       <VictoryChart height={ 200 }>
