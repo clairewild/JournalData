@@ -13,7 +13,12 @@ export const fetchData = () => dispatch => {
   );
 }
 
-export const TOGGLE_CLOUD = "TOGGLE_CLOUD";
-export const toggleCloud = () => ({
-  type: TOGGLE_CLOUD
+export const TOGGLE_PROPER_NOUNS = "TOGGLE_PROPER_NOUNS";
+export const toggleProperNouns = () => ({
+  type: TOGGLE_PROPER_NOUNS
+});
+
+export const TOGGLE_COMMON_NOUNS = "TOGGLE_COMMON_NOUNS";
+export const toggleCommonNouns = () => ({
+  type: TOGGLE_COMMON_NOUNS
 });

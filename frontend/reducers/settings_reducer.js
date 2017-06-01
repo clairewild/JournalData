@@ -1,9 +1,10 @@
 import merge from 'lodash/merge';
 
-import { TOGGLE_CLOUD } from '../actions/actions.js';
+import { TOGGLE_PROPER_NOUNS, TOGGLE_COMMON_NOUNS } from '../actions/actions.js';
 
 const _state = {
-  entities_only: false
+  proper_nouns: true,
+  common_nouns: true
 };
 
 const SettingsReducer = (state = _state, action) => {
@@ -11,8 +12,11 @@ const SettingsReducer = (state = _state, action) => {
   let newState = merge({}, state);
 
   switch (action.type) {
-    case TOGGLE_CLOUD:
-      newState.entities_only = !newState.entities_only;
+    case TOGGLE_PROPER_NOUNS:
+      newState.proper_nouns = !state.proper_nouns;
+      return newState;
+    case TOGGLE_COMMON_NOUNS:
+      newState.common_nouns = !state.common_nouns;
       return newState;
     default:
       return state;

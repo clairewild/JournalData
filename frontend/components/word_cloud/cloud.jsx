@@ -9,40 +9,33 @@ class Cloud extends React.Component {
   }
 
   data() {
-    const entities = this.props.word_cloud.entities;
-    if (this.props.entities_only) {
-      return entities;
+    let entities = this.props.word_cloud.entities;
+    let other_words = this.props.word_cloud.other_words;
+
+    if (!this.props.proper_nouns) {
+      entities = {};
     }
-    const other_words = this.props.word_cloud.other_words;
+    if (!this.props.common_nouns) {
+      other_words = {};
+    }
+
     return entities.concat(other_words);
   }
 
   toggleButtons() {
-    // const clickable = { color: 'blue' };
-    if (this.props.entities_only) {
-      return (
-        <div className="cloud-toggle">
-          <div id='selected'><p>Proper nouns only</p></div>
-          <div onClick={ this.props.toggleCloud } id='clickable'><p>All words</p></div>
-
-          // TODO: create 2 actions, one for each toggle, get rid of entities_only
-          <label className="switch" onClick={ this.props.toggleCloud }>
-              <input type="checkbox"></input>
-              <div className="slider"></div>
-          </label>
-
-          <label className="switch">
-              <input type="checkbox"></input>
-              <div className="slider"></div>
-          </label>
-
-        </div>
-      );
-    }
     return (
-      <div className="cloud-toggle">
-        <div onClick={ this.props.toggleCloud } id='clickable'><p>Proper nouns only</p></div>
-        <div id='selected'><p>All words</p></div>
+      <div>
+        <label className="switch">
+            <input onClick={ this.props.toggleProperNouns } type="checkbox"></input>
+            <div className="slider"></div>
+        </label>
+        <p>Proper nouns</p>
+
+        <label className="switch">
+            <input onClick={ this.props.toggleCommonNouns } type="checkbox"></input>
+            <div className="slider"></div>
+        </label>
+        <p>Common nouns</p>
       </div>
     );
   }
