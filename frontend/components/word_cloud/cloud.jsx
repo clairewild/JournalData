@@ -13,10 +13,10 @@ class Cloud extends React.Component {
     let other_words = this.props.word_cloud.other_words;
 
     if (!this.props.proper_nouns) {
-      entities = {};
+      entities = [];
     }
     if (!this.props.common_nouns) {
-      other_words = {};
+      other_words = [];
     }
 
     return entities.concat(other_words);
@@ -25,17 +25,21 @@ class Cloud extends React.Component {
   toggleButtons() {
     return (
       <div>
-        <label className="switch">
-            <input onClick={ this.props.toggleProperNouns } type="checkbox"></input>
-            <div className="slider"></div>
-        </label>
-        <p>Proper nouns</p>
+        <div className="toggle-button">
+          <label className="switch">
+              <input onClick={ this.props.toggleProperNouns } type="checkbox"></input>
+              <div className="slider"></div>
+          </label>
+          <p>Proper nouns</p>
+        </div>
 
-        <label className="switch">
-            <input onClick={ this.props.toggleCommonNouns } type="checkbox"></input>
-            <div className="slider"></div>
-        </label>
-        <p>Common nouns</p>
+        <div className="toggle-button">
+          <label className="switch">
+              <input onClick={ this.props.toggleCommonNouns } type="checkbox"></input>
+              <div className="slider"></div>
+          </label>
+          <p>Common nouns</p>
+        </div>
       </div>
     );
   }

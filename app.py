@@ -5,7 +5,7 @@ from backend.analyze import analyze_json
 
 @app.route("/")
 def show_index():
-  return render_template("index.html")
+  return render_template("index.html", font_url = "https://fonts.googleapis.com/css?family=Open+Sans|Roboto")
 
 @app.route("/data", methods=['GET'])
 def data():

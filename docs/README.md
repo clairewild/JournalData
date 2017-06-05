@@ -32,8 +32,6 @@ Users will be able to sign into their Dropbox account, and the app will find tex
   + Fix spacing on charts
   + Update colors on charts
   + Fix sizing of font/text areas/pie charts
-  + Choose google font
-  + Create two separate actions for toggling word cloud
   + Production README
     - Add screenshot
     - Verify install instructions
@@ -46,7 +44,7 @@ Users will be able to sign into their Dropbox account, and the app will find tex
     - Total word count
     - Average words per day
     - Plot days vs time of day with colored dots for word count
-    
+
 - v3
   + Corpora download
   + Sentiment analysis
