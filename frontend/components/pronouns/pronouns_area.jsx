@@ -26,13 +26,8 @@ class PronounsArea extends React.Component {
           tickCount={5}
           tickFormat={
             (x) => {
-              console.log(Moment("2016-01-01").toString());
-              console.log(Moment("2016-01-01").month());
-              console.log(`\ntick: ${x}`);
-              console.log(first_moment.toString());
               const newMoment = first_moment.clone();
               newMoment.add(x, 'seconds');
-              console.log(newMoment.toString());
               return `${newMoment.year()}-${newMoment.month()+1}-${newMoment.date()}`;
             }
           } />

@@ -28,11 +28,12 @@ Users will be able to sign into their Dropbox account, and the app will find tex
 
 ## Implementation Priorities
 
-- v1 (Target: Sunday, May 28)
-  + Production README
-    - Verify install instructions
+- v1
+  + Host on Heroku
 
 - v2
+  + JSON file uploads
+  + Verify install instructions
   + Parse entire diary for sample data
   + Github chart
   + Python word cloud: https://github.com/amueller/word_cloud
@@ -45,8 +46,6 @@ Users will be able to sign into their Dropbox account, and the app will find tex
   + Corpora download
   + Sentiment analysis
   + Refactor so that backend files only iterate over tokens once
-  + Host on Heroku
-  + JSON file uploads
 
 ## Links
 - http://textminingonline.com/getting-started-with-spacy

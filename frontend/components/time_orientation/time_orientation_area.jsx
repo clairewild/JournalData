@@ -28,13 +28,8 @@ class TimeOrientationArea extends React.Component {
           tickCount={5}
           tickFormat={
             (x) => {
-              console.log(Moment("2016-01-01").toString());
-              console.log(Moment("2016-01-01").month());
-              console.log(`\ntick: ${x}`);
-              console.log(first_moment.toString());
               const newMoment = first_moment.clone();
               newMoment.add(x, 'seconds');
-              console.log(newMoment.toString());
               return `${newMoment.year()}-${newMoment.month()+1}-${newMoment.date()}`;
             }
           } />
@@ -72,16 +67,3 @@ class TimeOrientationArea extends React.Component {
 }
 
 export default TimeOrientationArea;
-
-
-// console.log(`\nlog tick ${x}`);
-// console.log(`first_date: ${first_date}`);
-// const moment = first_moment.add(x, 'seconds');
-// console.log(`moment: ${moment}`);
-// const year = moment.year();
-// const month = moment.month();
-// const day = moment.day();
-// let str = `${year}-${month}-${day}`;
-// console.log(str);
-// return `${x}`
-// return str;
