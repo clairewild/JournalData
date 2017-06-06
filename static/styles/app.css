@@ -9,8 +9,11 @@
   flex-direction: column;
 }
 
-h3 {
+h1, h2, h3 {
   font-family: 'Roboto', sans-serif;
+}
+
+h3 {
   font-size: 45px;
   padding-bottom: 25px;
 }

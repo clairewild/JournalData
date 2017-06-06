@@ -20,7 +20,7 @@ class TimeOrientationArea extends React.Component {
     const first_moment = Moment(first_date)
 
     return (
-      <VictoryChart height={ 200 }>
+      <VictoryChart height={140} padding={{top: 0, bottom: 40, left: 40, right: 40}} >
 
         <VictoryAxis
           scale="date"
@@ -40,16 +40,16 @@ class TimeOrientationArea extends React.Component {
           } />
 
         <VictoryArea
-          data={ future_data }
+          data={future_data}
           x="date"
-          y={ (datum) => datum.percentage * 100.00 }
+          y={(datum) => datum.percentage * 100.00}
           style={{
-            data: { fill: timeColors["Future"] }
+            data: {fill: timeColors["Future"]}
           }}>
         </VictoryArea>
 
         <VictoryArea
-          data={ present_data }
+          data={present_data}
           x="date"
           y={ (datum) => datum.percentage * 100.00 }
           style={{
