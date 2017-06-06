@@ -29,11 +29,7 @@ Users will be able to sign into their Dropbox account, and the app will find tex
 ## Implementation Priorities
 
 - v1 (Target: Sunday, May 28)
-  + Fix spacing on charts
-  + Update colors on charts
-  + Fix sizing of font/text areas/pie charts
   + Production README
-    - Add screenshot
     - Verify install instructions
 
 - v2

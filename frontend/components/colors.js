@@ -10,9 +10,9 @@ const COLORS = {
 };
 
 export const timeColors = {
-  "Past": COLORS.red,
-  "Present": COLORS.yellow,
-  "Future": COLORS.lightGreen
+  "Past": COLORS.blue,
+  "Present": COLORS.red,
+  "Future": COLORS.yellow
 };
 
 export const pronounColors = {
