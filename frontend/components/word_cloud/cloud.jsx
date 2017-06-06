@@ -53,18 +53,20 @@ class Cloud extends React.Component {
     }
 
     return (
-      <div id="word-cloud">
-        <div className="text-area">
+      <div>
+        <div className="text-area cloud-text">
           <h3>Word Frequency</h3>
           { this.toggleButtons() }
         </div>
 
-        <WordCloud
-          data={ this.data() }
-          fontSizeMapper={ fontSizeMapper }
-          rotate={ rotate }
-          padding={ 4 }>
-        </WordCloud>
+        <div className="word-cloud">
+          <WordCloud
+            data={ this.data() }
+            fontSizeMapper={ fontSizeMapper }
+            rotate={ rotate }
+            padding={ 4 }>
+          </WordCloud>
+        </div>
       </div>
     );
   }
