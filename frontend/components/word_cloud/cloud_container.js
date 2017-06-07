@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
-import Cloud from './cloud.jsx';
-import { toggleProperNouns, toggleCommonNouns } from '../../actions/actions.js';
+import Cloud from './cloud';
+import { toggleProperNouns, toggleCommonNouns } from '../../actions/actions';
 
 const mapStateToProps = state => ({
   word_cloud: state.data.word_cloud,

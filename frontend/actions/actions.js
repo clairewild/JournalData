@@ -1,15 +1,22 @@
 import * as ApiUtil from '../util/util';
 
+export const fetchData = () => dispatch => {
+  return (
+    ApiUtil.fetchData()
+      .then(data => dispatch(receiveData(data)))
+  );
+}
+
 export const RECEIVE_DATA = "RECEIVE_DATA";
 export const receiveData = data => ({
   type: RECEIVE_DATA,
   data
 });
 
-export const fetchData = () => dispatch => {
+export const uploadFile = file => dispatch => {
   return (
-    ApiUtil.fetchData()
-      .then(data => dispatch(receiveData(data)))
+    ApiUtil.uploadFile(file)
+      // .then(() => dispatch(fetchData()))
   );
 }
 

@@ -4,3 +4,11 @@ export const fetchData = () => (
     url: `/data`
   })
 );
+
+export const uploadFile = file => (
+  $.ajax({
+    method: 'POST',
+    url: `/upload`,
+    file
+  })
+);

@@ -33,38 +33,38 @@ class PronounsArea extends React.Component {
           } />
 
         <VictoryArea
-          data={ third_person_data }
+          data={third_person_data}
           x="date"
-          y={ (datum) => datum.percentage * 100.00 }
+          y={(datum) => datum.percentage * 100.00}
           style={{
-            data: { fill: pronounColors["Third Person"] }
+            data: {fill: pronounColors["Third Person"]}
           }}>
         </VictoryArea>
 
         <VictoryArea
-          data={ second_person_data }
+          data={second_person_data}
           x="date"
-          y={ (datum) => datum.percentage * 100.00 }
+          y={(datum) => datum.percentage * 100.00}
           style={{
-            data: { fill: pronounColors["Second Person"] }
+            data: {fill: pronounColors["Second Person"]}
           }}>
         </VictoryArea>
 
         <VictoryArea
-          data={ first_plural_data }
+          data={first_plural_data}
           x="date"
-          y={ (datum) => datum.percentage * 100.00 }
+          y={(datum) => datum.percentage * 100.00}
           style={{
-            data: { fill: pronounColors["First Plural"] }
+            data: {fill: pronounColors["First Plural"]}
           }}>
         </VictoryArea>
 
         <VictoryArea
-          data={ first_person_data }
+          data={first_person_data}
           x="date"
-          y={ (datum) => datum.percentage * 100.00 }
+          y={(datum) => datum.percentage * 100.00}
           style={{
-            data: { fill: pronounColors["First Person"] }
+            data: {fill: pronounColors["First Person"]}
           }}>
         </VictoryArea>
 
