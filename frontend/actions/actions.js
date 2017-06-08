@@ -13,12 +13,12 @@ export const receiveData = data => ({
   data
 });
 
-export const uploadFile = data => dispatch => {
-  return (
-    ApiUtil.uploadFile(data)
-      // .then(() => dispatch(fetchData()))
-  );
-}
+// export const uploadFile = data => dispatch => {
+//   return (
+//     ApiUtil.uploadFile(data)
+//       // .then(() => dispatch(fetchData()))
+//   );
+// }
 
 export const TOGGLE_PROPER_NOUNS = "TOGGLE_PROPER_NOUNS";
 export const toggleProperNouns = () => ({

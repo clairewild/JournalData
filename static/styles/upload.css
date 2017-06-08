@@ -1,0 +1,33 @@
+#full-width-upload {
+  margin-top: 60px;
+}
+
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border: dashed 2px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.button {
+  background-color: #2196F3;
+  border: none;
+  border-radius: 34px;
+  width: 120px;
+  height: 50px;
+  color: white;
+  font-size: 15px;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.button:active {
+  
+}

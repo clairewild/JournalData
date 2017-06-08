@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Nav from './nav';
-import FileUploadContainer from './file_upload/file_upload_container';
+import FileUpload from './file_upload/file_upload';
 import WordCountContainer from './word_count/word_count_container';
 import CloudContainer from './word_cloud/cloud_container';
 import PronounsContainer from './pronouns/pronouns_container';
@@ -23,7 +23,11 @@ class Home extends React.Component {
         <Nav />
         <div id="nav-buffer"></div>
 
-        <FileUploadContainer />
+        <div className="full-width-element" id="full-width-upload">
+          <div className="inner-element" id="inner-upload">
+            <FileUpload />
+          </div>
+        </div>
 
         <div className="full-width-element" id="full-width-cloud">
           <div className="inner-element" id="inner-cloud">

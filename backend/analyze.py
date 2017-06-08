@@ -44,6 +44,8 @@ def analyze_json():
         }
     }
 
+    # TODO: check to see if ./uploads/diary.json exists
+    # if it does open it, otherwise do this...
     with open('./corpus/diary.json') as data_file:
         raw_data = json.load(data_file)
 

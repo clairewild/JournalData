@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, jsonify
-from werkzeug import secure_filename
 import os
 
 from backend.analyze import analyze_json
@@ -20,13 +19,12 @@ def show_index():
 def upload():
     file = request.files["file"]
     if file and allowed_file(file.filename):
-        filename = secure_filename(file.filename)
-        # TODO: if filename is "", generate a unique filename
+        filename = "diary.json"
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        # TODO: delete this redirect!!!
+        # TODO: delete this redirect and instead fetch data again
         return redirect(url_for('uploaded_file', filename=filename))
 
-# TODO: delete this route once everything works
+# TODO: delete this route once everything works!!
 @app.route("/uploads/<filename>")
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)

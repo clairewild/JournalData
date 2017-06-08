@@ -7,10 +7,13 @@ class FileUpload extends React.Component {
 
   render() {
     return (
-      <form action="upload" method="post" encType="multipart/form-data">
-        <input type="file" name="file" />
-        <input type="submit" value="Upload File" />
-      </form>
+      <div className="file-upload">
+        <h3>Upload Day One JSON</h3>
+        <form action="upload" method="post" encType="multipart/form-data">
+          <input type="file" name="file" />
+          <input className="button" type="submit" value="Upload File" />
+        </form>
+      </div>
     );
   }
 }
