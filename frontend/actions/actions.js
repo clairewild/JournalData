@@ -13,9 +13,9 @@ export const receiveData = data => ({
   data
 });
 
-export const uploadFile = file => dispatch => {
+export const uploadFile = data => dispatch => {
   return (
-    ApiUtil.uploadFile(file)
+    ApiUtil.uploadFile(data)
       // .then(() => dispatch(fetchData()))
   );
 }

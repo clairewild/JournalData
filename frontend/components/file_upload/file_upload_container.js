@@ -4,7 +4,7 @@ import FileUpload from './file_upload';
 import { uploadFile } from '../../actions/actions';
 
 const mapDispatchToProps = dispatch => ({
-  uploadFile: file => dispatch(uploadFile(file))
+  uploadFile: data => dispatch(uploadFile(data))
 });
 
 export default connect(null, mapDispatchToProps)(FileUpload);

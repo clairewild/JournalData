@@ -5,10 +5,10 @@ export const fetchData = () => (
   })
 );
 
-export const uploadFile = file => (
+export const uploadFile = data => (
   $.ajax({
     method: 'POST',
     url: `/upload`,
-    file
+    body: data
   })
 );

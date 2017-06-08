@@ -18,7 +18,6 @@ def show_index():
 
 @app.route("/upload", methods=['POST'])
 def upload():
-    # TODO: change this to account for ajax request format
     file = request.files["file"]
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
@@ -27,7 +26,7 @@ def upload():
         # TODO: delete this redirect!!!
         return redirect(url_for('uploaded_file', filename=filename))
 
-# TODO: delete this route and instead make another request to /data
+# TODO: delete this route once everything works
 @app.route("/uploads/<filename>")
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)

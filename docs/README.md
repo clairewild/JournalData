@@ -30,12 +30,12 @@ Users will be able to sign into their Dropbox account, and the app will find tex
 
 - v1
   + Host on Heroku
+  + Verify install instructions
 
 - v2
   + JSON file uploads
-  + Verify install instructions
   + Parse entire diary for sample data
-  + Github chart
+  + Github chart: https://github.com/DKirwan/calendar-heatmap
   + Python word cloud: https://github.com/amueller/word_cloud
   + Word count
     - Total word count
