@@ -21,13 +21,12 @@ def upload():
     if file and allowed_file(file.filename):
         filename = "diary.json"
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        # TODO: delete this redirect and instead fetch data again
-        return redirect(url_for('uploaded_file', filename=filename))
+        return redirect(url_for("show_index"))
+        # return redirect(url_for('uploaded_file', filename=filename))
 
-# TODO: delete this route once everything works!!
-@app.route("/uploads/<filename>")
-def uploaded_file(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+# @app.route("/uploads/<filename>")
+# def uploaded_file(filename):
+#     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 @app.route("/data", methods=['GET'])
 def data():

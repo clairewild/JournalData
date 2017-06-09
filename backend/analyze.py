@@ -1,6 +1,6 @@
 import json
-# from pprint import pprint
 import time
+import os.path
 
 from backend.word_count import word_count_fn
 from backend.word_cloud import word_cloud_fn
@@ -44,9 +44,12 @@ def analyze_json():
         }
     }
 
-    # TODO: check to see if ./uploads/diary.json exists
-    # if it does open it, otherwise do this...
-    with open('./corpus/diary.json') as data_file:
+    if os.path.isfile("../uploads/diary.json"):
+        path = "./uploads/diary.json"
+    else:
+        path = "./corpus/diary.json"
+
+    with open(path) as data_file:
         raw_data = json.load(data_file)
 
     entries = raw_data["entries"]
