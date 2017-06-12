@@ -46,3 +46,4 @@ Users will be able to sign into their Dropbox account, and the app will find tex
   + Corpora download
   + Sentiment analysis
   + Refactor so that backend files only iterate over tokens once
+  + Loading bar

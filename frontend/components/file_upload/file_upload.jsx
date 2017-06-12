@@ -29,37 +29,3 @@ class FileUpload extends React.Component {
 }
 
 export default FileUpload;
-
-// class File extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       data: null
-//     }
-//     this.handleChange = this.handleChange.bind(this);
-//     this.handleSubmit = this.handleSubmit.bind(this);
-//   }
-//
-//   handleChange(e) {
-//     let data = new FormData();
-//     data.append("file", e.target.files[0]);
-//     debugger;
-//     this.setState({
-//       data: data
-//     });
-//   }
-//
-//   handleSubmit(e) {
-//     debugger;
-//     this.props.uploadFile(this.state.data); // wrap in an object?
-//   }
-//
-//   render() {
-//     return (
-//       <form action="" enctype="multipart/form-data">
-//         <input onChange={this.handleChange} type="file" name="file"></input>
-//         <input onClick={this.handleSubmit} type="button" value="Upload File"></input>
-//       </form>
-//     );
-//   }
-// }
