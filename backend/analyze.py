@@ -44,7 +44,7 @@ def analyze_json():
         }
     }
 
-    if os.path.isfile("../uploads/diary.json"):
+    if os.path.isfile("./uploads/diary.json"):
         path = "./uploads/diary.json"
     else:
         path = "./corpus/diary.json"
@@ -60,7 +60,6 @@ def analyze_json():
     last_date = None
     for entry in entries:
         date = entry["creationDate"]
-        print(date)
 
         if first_date == None:
             first_date = date
@@ -76,10 +75,6 @@ def analyze_json():
 
     data["date"]["min"] = first_date
     data["date"]["max"] = last_date
-    print("\n\nfirst_date:")
-    print(first_date)
-    print("\n\nlast_date")
-    print(last_date)
 
     first_date = time.strptime(first_date, '%Y-%m-%dT%H:%M:%SZ')
 
@@ -147,5 +142,9 @@ def analyze_json():
 
     # Pass all text from all entries to word cloud function
     data["word_cloud"] = word_cloud_fn(all_text)
+
+    if path == "./uploads/diary.json":
+        print("Deleting file")
+        os.remove(path)
 
     return data

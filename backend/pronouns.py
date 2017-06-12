@@ -25,6 +25,11 @@ def pronouns_fn(str):
             third_person_count += 1
 
     total_count = first_person_count + first_plural_count + second_person_count + third_person_count
+    print(total_count)
+    print(first_person_count)
+    print(first_plural_count)
+    print(second_person_count)
+    print(third_person_count)
 
     return {
         "percentages": {

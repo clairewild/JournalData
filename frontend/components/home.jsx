@@ -10,10 +10,23 @@ import TimeOrientationContainer from './time_orientation/time_orientation_contai
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    this.renderFileUpload = this.renderFileUpload.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchData();
+  }
+
+  renderFileUpload() {
+    if (!this.props.location.pathname.startsWith("/uploads")) {
+      return (
+        <div className="full-width-element" id="full-width-upload">
+          <div className="inner-element" id="inner-upload">
+            <FileUpload />
+          </div>
+        </div>
+      );
+    }
   }
 
   render() {
@@ -23,11 +36,7 @@ class Home extends React.Component {
         <Nav />
         <div id="nav-buffer"></div>
 
-        <div className="full-width-element" id="full-width-upload">
-          <div className="inner-element" id="inner-upload">
-            <FileUpload />
-          </div>
-        </div>
+        {this.renderFileUpload()}
 
         <div className="full-width-element" id="full-width-cloud">
           <div className="inner-element" id="inner-cloud">
