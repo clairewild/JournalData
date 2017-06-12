@@ -13,7 +13,7 @@ def allowed_file(filename):
 
 @app.route("/")
 def show_index():
-  return render_template("index.html", font_url = "https://fonts.googleapis.com/css?family=Open+Sans|Roboto")
+    return render_template("index.html", font_url = "https://fonts.googleapis.com/css?family=Open+Sans|Roboto")
 
 @app.route("/upload", methods=['POST'])
 def upload():
@@ -34,4 +34,4 @@ def data():
     return jsonify(data)
 
 if __name__ == "__main__":
-  app.run()
+    app.run()
