@@ -110,7 +110,7 @@ def analyze_json():
         count_analysis = word_count_fn(text)
         pronoun_analysis = pronouns_fn(text)
         time_analysis = time_orientation_fn(text)
-        tone_analysis = tone_fn(text)
+        tone_analysis = entry_tone_fn(text)
 
         # TODO: refactor this!!?? it's not very DRY, can we use some metaprogramming maybe?
 
@@ -162,7 +162,10 @@ def analyze_json():
         #######################
         ### Tone analysis
 
-        
+        for emotion in ["Anger", "Disgust", "Fear", "Joy", "Sadness"]:
+            emotion_percentage = tone_analysis[emotion]
+            obj = {"date": difference, "percentage": emotion_percentage}
+            data["tone"]["area"][emotion].append(obj)
 
     # Pass all text from all entries to word cloud function
     data["word_cloud"] = word_cloud_fn(all_text)
@@ -175,3 +178,5 @@ def analyze_json():
         os.remove(path)
 
     return data
+
+pprint(analyze_json())

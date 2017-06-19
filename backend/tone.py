@@ -14,28 +14,18 @@ def flatten_t(orig):
     return data
 
 def overall_tone_fn(str):
-    return flatten_t(anlyze_tone(str))
+    return flatten_t(analyze_tone(str))
 
-def overall_tone_fn(str):
-    data = entry_tone_fn(str)
-    results = {
-        "percentages": {},
-        ""
-    }
+def entry_tone_fn(str):
+    emotions = ["Anger", "Disgust", "Fear", "Joy", "Sadness"]
+    data = overall_tone_fn(str)
+    results = {}
+    total_count = 0
 
-    for k, v in data:
+    for emotion in emotions:
+        total_count += data[emotion]
 
+    for emotion in emotions:
+        results[emotion] = (0 if total_count == 0 else data[emotion] / total_count)
 
-    return {
-        "percentages": {
-            "first_person": (0 if total_count == 0 else first_person_count / total_count),
-            "first_plural": (0 if total_count == 0 else first_plural_count / total_count),
-            "second_person": (0 if total_count == 0 else second_person_count / total_count),
-            "third_person": (0 if total_count == 0 else third_person_count / total_count)
-        },
-        "counts": {
-            "first_person": first_person_count,
-            "first_plural": first_plural_count,
-            "second_person": second_person_count,
-            "third_person": third_person_count
-        }
+    return results
