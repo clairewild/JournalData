@@ -1,9 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory, jsonify
 import os
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory, jsonify
+app = Flask(__name__)
 
 from backend.analyze import analyze_json
-
-app = Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = "uploads/"
 app.config['ALLOWED_EXTENSIONS'] = set(["json"])
@@ -34,4 +33,5 @@ def data():
     return jsonify(data)
 
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
