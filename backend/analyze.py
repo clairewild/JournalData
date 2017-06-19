@@ -6,6 +6,8 @@ from backend.word_count import word_count_fn
 from backend.word_cloud import word_cloud_fn
 from backend.pronouns import pronouns_fn
 from backend.time_orientation import time_orientation_fn
+from backend.tone import entry_tone_fn
+from backend.tone import overall_tone_fn
 
 def analyze_json():
 
@@ -36,6 +38,22 @@ def analyze_json():
                 "past": 0,
                 "present": 0,
                 "future": 0
+            }
+        },
+        "tone": {
+            "area": {
+                'Anger': [],
+                'Disgust': [],
+                'Fear': [],
+                'Joy': [],
+                'Sadness': []
+            },
+            "summary": {
+                'Anger': 0,
+                'Disgust': 0,
+                'Fear': 0,
+                'Joy': 0,
+                'Sadness': 0
             }
         },
         "date": {
@@ -92,6 +110,7 @@ def analyze_json():
         count_analysis = word_count_fn(text)
         pronoun_analysis = pronouns_fn(text)
         time_analysis = time_orientation_fn(text)
+        tone_analysis = tone_fn(text)
 
         # TODO: refactor this!!?? it's not very DRY, can we use some metaprogramming maybe?
 
@@ -140,8 +159,16 @@ def analyze_json():
         data["time_orientation"]["area"]["future"].append(future)
         data["time_orientation"]["pie"]["future"] += time_analysis["counts"]["future"]
 
+        #######################
+        ### Tone analysis
+
+        
+
     # Pass all text from all entries to word cloud function
     data["word_cloud"] = word_cloud_fn(all_text)
+
+    # Pass all text from all entries to overall tone analysis function
+    data["tone"]["summary"] = overall_tone_fn(all_text)
 
     if path == "./uploads/diary.json":
         print("Deleting file")
