@@ -6,6 +6,7 @@ import WordCountContainer from './word_count/word_count_container';
 import CloudContainer from './word_cloud/cloud_container';
 import PronounsContainer from './pronouns/pronouns_container';
 import TimeOrientationContainer from './time_orientation/time_orientation_container';
+import ToneContainer from './tone/tone_container';
 
 class Home extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Home extends React.Component {
     this.renderFileUpload = this.renderFileUpload.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchData();
   }
 
@@ -53,6 +54,12 @@ class Home extends React.Component {
         <div className="full-width-element" id="full-width-time-orientation">
           <div className="inner-element" id="inner-time-orientation">
             <TimeOrientationContainer />
+          </div>
+        </div>
+
+        <div className="full-width-element" id="full-width-tone">
+          <div className="inner-element" id="inner-tone">
+            <ToneContainer />
           </div>
         </div>
 

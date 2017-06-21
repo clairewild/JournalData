@@ -10,10 +10,10 @@ const _state = {
   },
   pronouns: {
     area: {
-      first_person: [],
-      first_plural: [],
-      second_person: [],
-      third_person: []
+      first_person: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
+      first_plural: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
+      second_person: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
+      third_person: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}]
     },
     pie: {
       first_person: 1,
@@ -32,6 +32,22 @@ const _state = {
       past: 1,
       present: 0,
       future: 0
+    }
+  },
+  tone: {
+    summary: {
+      Joy: 0,
+      Fear: 0,
+      Sadness: 0,
+      Anger: 0,
+      Disgust: 0
+    },
+    area: {
+      Joy: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
+      Fear: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
+      Sadness: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
+      Anger: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],
+      Disgust: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}]
     }
   },
   date: {

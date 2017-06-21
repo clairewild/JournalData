@@ -45,10 +45,8 @@ class Cloud extends React.Component {
   }
 
   render() {
-    // TODO: Make this dynamic
     const fontSizeMapper = word => Math.log2(word.value) * 5;
     const rotate = word => {
-      // return word.value % 360;
       return (Math.random() >= 0.5) ? 0 : 90;
     }
 

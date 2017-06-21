@@ -27,6 +27,10 @@ pip3 install flask --user
 sudo pip3 install -U spacy
 sudo python3 -m spacy.en.download all
 
+# Install the Watson API library
+pip3 install pytest-runner
+pip3 install watson-developer-cloud
+
 # Navigate to the root directory and install npm packages
 npm install
 

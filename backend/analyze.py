@@ -41,19 +41,19 @@ def analyze_json():
             }
         },
         "tone": {
-            "area": {
-                'Anger': [],
-                'Disgust': [],
-                'Fear': [],
-                'Joy': [],
-                'Sadness': []
-            },
             "summary": {
-                'Anger': 0,
-                'Disgust': 0,
-                'Fear': 0,
                 'Joy': 0,
-                'Sadness': 0
+                'Fear': 0,
+                'Sadness': 0,
+                'Anger': 0,
+                'Disgust': 0
+            },
+            "area": {
+                'Joy': [],
+                'Fear': [],
+                'Sadness': [],
+                'Anger': [],
+                'Disgust': []
             }
         },
         "date": {
@@ -162,8 +162,10 @@ def analyze_json():
         #######################
         ### Tone analysis
 
-        for emotion in ["Anger", "Disgust", "Fear", "Joy", "Sadness"]:
-            emotion_percentage = tone_analysis[emotion]
+        add = 0
+        for emotion in ["Joy", "Fear", "Sadness", "Anger", "Disgust"]:
+            emotion_percentage = tone_analysis[emotion] + add
+            add = emotion_percentage
             obj = {"date": difference, "percentage": emotion_percentage}
             data["tone"]["area"][emotion].append(obj)
 
@@ -178,5 +180,3 @@ def analyze_json():
         os.remove(path)
 
     return data
-
-pprint(analyze_json())

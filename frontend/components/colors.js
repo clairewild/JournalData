@@ -6,7 +6,8 @@ const COLORS = {
   pink: "#F084D4",
   red: "#F44864",
   lightGreen: "#A3EE5E",
-  green: "#08C578"
+  green: "#08C578",
+  purple: "#B692C2"
 };
 
 export const timeColors = {
@@ -20,4 +21,12 @@ export const pronounColors = {
   "First Plural": COLORS.orange,
   "Second Person": COLORS.lightBlue,
   "Third Person": COLORS.blue
+};
+
+export const toneColors = {
+  "Joy": COLORS.yellow,
+  "Fear": COLORS.purple,
+  "Sadness": COLORS.lightBlue,
+  "Anger": COLORS.red,
+  "Disgust": COLORS.lightGreen
 };

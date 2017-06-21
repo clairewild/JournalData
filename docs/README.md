@@ -28,22 +28,19 @@ Users will be able to sign into their Dropbox account, and the app will find tex
 
 ## Implementation Priorities
 
-- v1
-  + Host on Heroku
-  + Verify install instructions
-
 - v2
-  + JSON file uploads
-  + Parse entire diary for sample data
+  + Tone analysis chart over time
+  + Tone analysis summary chart
   + Github chart: https://github.com/DKirwan/calendar-heatmap
   + Python word cloud: https://github.com/amueller/word_cloud
+
+- v3
+  + Parse entire diary for sample data
+  + Overall positivity / negativity
   + Word count
     - Total word count
     - Average words per day
     - Plot days vs time of day with colored dots for word count
-
-- v3
-  + Corpora download
-  + Sentiment analysis
   + Refactor so that backend files only iterate over tokens once
   + Loading bar
+  + Topics???

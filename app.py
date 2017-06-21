@@ -6,6 +6,7 @@ from backend.analyze import analyze_json
 
 app.config['UPLOAD_FOLDER'] = "uploads/"
 app.config['ALLOWED_EXTENSIONS'] = set(["json"])
+# TODO: set font_url as a config constant?
 
 def allowed_file(filename):
     return "." in filename and filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']

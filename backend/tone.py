@@ -17,7 +17,7 @@ def overall_tone_fn(str):
     return flatten_t(analyze_tone(str))
 
 def entry_tone_fn(str):
-    emotions = ["Anger", "Disgust", "Fear", "Joy", "Sadness"]
+    emotions = ["Joy", "Fear", "Sadness", "Anger", "Disgust"]
     data = overall_tone_fn(str)
     results = {}
     total_count = 0
