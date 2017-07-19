@@ -7,20 +7,38 @@ import { toneColors } from '../colors';
 class ToneArea extends React.Component {
   constructor(props) {
     super(props);
+    this.renderArea = this.renderArea.bind(this);
+  }
+
+  renderArea(emotion) {
+    const data = this.props.area[emotion];
+    return (
+      <VictoryArea
+        data={data}
+        x="date"
+        y={(datum) => datum.percentage * 100.00}
+        style={{
+          data: {fill: toneColors[emotion]}
+        }}>
+      </VictoryArea>
+    );
   }
 
   render() {
-    const anger_data = this.props.area.Anger;
-    const disgust_data = this.props.area.Disgust;
-    const fear_data = this.props.area.Fear;
-    const joy_data = this.props.area.Joy;
-    const sadness_data = this.props.area.Sadness;
+    const emotions = ["Anger", "Disgust", "Fear", "Joy", "Sadness"];
+    const areas = emotions.map(emotion => this.renderArea(emotion));
+
+    // const anger_data = this.props.area.Anger;
+    // const disgust_data = this.props.area.Disgust;
+    // const fear_data = this.props.area.Fear;
+    // const joy_data = this.props.area.Joy;
+    // const sadness_data = this.props.area.Sadness;
 
     const first_date = this.props.date.min;
     const first_moment = Moment(first_date)
 
     return (
-      <VictoryChart height={140} padding={{top: 0, bottom: 40, left: 40, right: 40}} >
+      <VictoryChart height={140} padding={{top: 0, bottom: 40, left: 40, right: 40}}>
 
         <VictoryAxis
           scale="date"
@@ -32,52 +50,10 @@ class ToneArea extends React.Component {
               newMoment.add(x, 'seconds');
               return `${newMoment.year()}-${newMoment.month()+1}-${newMoment.date()}`;
             }
-          } />
+          }>
+        </VictoryAxis>
 
-        <VictoryArea
-          data={disgust_data}
-          x="date"
-          y={(datum) => datum.percentage * 100.00}
-          style={{
-            data: {fill: toneColors["Disgust"]}
-          }}>
-        </VictoryArea>
-
-        <VictoryArea
-          data={anger_data}
-          x="date"
-          y={(datum) => datum.percentage * 100.00}
-          style={{
-            data: {fill: toneColors["Anger"]}
-          }}>
-        </VictoryArea>
-
-        <VictoryArea
-          data={sadness_data}
-          x="date"
-          y={(datum) => datum.percentage * 100.00}
-          style={{
-            data: {fill: toneColors["Sadness"]}
-          }}>
-        </VictoryArea>
-
-        <VictoryArea
-          data={fear_data}
-          x="date"
-          y={(datum) => datum.percentage * 100.00}
-          style={{
-            data: {fill: toneColors["Fear"]}
-          }}>
-        </VictoryArea>
-
-        <VictoryArea
-          data={joy_data}
-          x="date"
-          y={(datum) => datum.percentage * 100.00}
-          style={{
-            data: {fill: toneColors["Joy"]}
-          }}>
-        </VictoryArea>
+        { areas }
 
       </VictoryChart>
     );
