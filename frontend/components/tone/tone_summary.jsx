@@ -22,11 +22,12 @@ class ToneSummary extends React.Component {
   }
 
   render() {
-    const emotions = ["Anger", "Disgust", "Fear", "Joy", "Sadness"];
+    const emotions = ["Joy", "Fear", "Sadness", "Anger", "Disgust"];
     const bars = emotions.map(emotion => this.renderBar(emotion));
 
     return (
       <VictoryGroup horizontal
+        offset={20}
         domain={{x: [0, 1]}}
         style={{ data: { width: 20 }, labels: { fontSize: 11 } }}>
 

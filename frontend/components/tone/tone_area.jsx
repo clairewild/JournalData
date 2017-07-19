@@ -25,14 +25,8 @@ class ToneArea extends React.Component {
   }
 
   render() {
-    const emotions = ["Anger", "Disgust", "Fear", "Joy", "Sadness"];
+    const emotions = ["Disgust", "Anger", "Sadness", "Fear", "Joy"];
     const areas = emotions.map(emotion => this.renderArea(emotion));
-
-    // const anger_data = this.props.area.Anger;
-    // const disgust_data = this.props.area.Disgust;
-    // const fear_data = this.props.area.Fear;
-    // const joy_data = this.props.area.Joy;
-    // const sadness_data = this.props.area.Sadness;
 
     const first_date = this.props.date.min;
     const first_moment = Moment(first_date)
