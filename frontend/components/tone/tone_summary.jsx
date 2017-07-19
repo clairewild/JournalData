@@ -13,6 +13,7 @@ class ToneSummary extends React.Component {
     const data = [{x: emotion, y: this.props.summary[emotion]}];
     return (
       <VictoryBar
+        key={emotion + "tonesummary"}
         data={data}
         style={{
           data: {fill: toneColors[emotion]}
@@ -27,9 +28,11 @@ class ToneSummary extends React.Component {
 
     return (
       <VictoryGroup horizontal
-        offset={20}
-        domain={{x: [0, 1]}}
-        style={{ data: { width: 20 }, labels: { fontSize: 11 } }}>
+        offset={25}
+        padding={{top: 40, bottom: 40, left: 40, right: 40}}
+        style={{
+          data: {width: 20}
+        }}>
 
         { bars }
 

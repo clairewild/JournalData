@@ -14,6 +14,7 @@ class ToneArea extends React.Component {
     const data = this.props.area[emotion];
     return (
       <VictoryArea
+        key={emotion + "tonearea"}
         data={data}
         x="date"
         y={(datum) => datum.percentage * 100.00}
