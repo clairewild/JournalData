@@ -1,6 +1,3 @@
-// http://formidable.com/open-source/victory/guides/custom-charts/
-// https://momentjs.com/docs/#/displaying/as-string/
-
 import React from 'react';
 import { VictoryChart, VictoryArea, VictoryAxis} from 'victory';
 import Moment from 'moment'
@@ -12,15 +9,30 @@ class TimeOrientationArea extends React.Component {
     super(props);
   }
 
+  renderArea(tense) {
+    const data = this.props.area[tense.toLowerCase()];
+    return (
+      <VictoryArea
+        key={tense + "tensearea"}
+        data={data}
+        x="date"
+        y={(datum) => datum.percentage * 100.00}
+        style={{
+          data: {fill: timeColors[tense]}
+        }}>
+      </VictoryArea>
+    );
+  }
+
   render() {
-    const past_data = this.props.area.past;
-    const present_data = this.props.area.present;
-    const future_data = this.props.area.future;
+    const tenses = ["Future", "Present", "Past"];
+    const areas = tenses.map(tense => this.renderArea(tense));
+
     const first_date = this.props.date.min;
     const first_moment = Moment(first_date)
 
     return (
-      <VictoryChart height={140} padding={{top: 0, bottom: 40, left: 40, right: 40}} >
+      <VictoryChart height={140} padding={{ top: 0, bottom: 40, left: 40, right: 40 }}>
 
         <VictoryAxis
           scale="date"
@@ -32,34 +44,10 @@ class TimeOrientationArea extends React.Component {
               newMoment.add(x, 'seconds');
               return `${newMoment.year()}-${newMoment.month()+1}-${newMoment.date()}`;
             }
-          } />
+          }>
+        </VictoryAxis>
 
-        <VictoryArea
-          data={future_data}
-          x="date"
-          y={(datum) => datum.percentage * 100.00}
-          style={{
-            data: {fill: timeColors["Future"]}
-          }}>
-        </VictoryArea>
-
-        <VictoryArea
-          data={present_data}
-          x="date"
-          y={ (datum) => datum.percentage * 100.00 }
-          style={{
-            data: { fill: timeColors["Present"] }
-          }}>
-        </VictoryArea>
-
-        <VictoryArea
-          data={ past_data }
-          x="date"
-          y={ (datum) => datum.percentage * 100.00 }
-          style={{
-            data: { fill: timeColors["Past"] }
-          }}>
-        </VictoryArea>
+        { areas }
 
       </VictoryChart>
     );

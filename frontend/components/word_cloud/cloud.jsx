@@ -18,7 +18,6 @@ class Cloud extends React.Component {
     if (!this.props.common_nouns) {
       other_words = [];
     }
-
     return entities.concat(other_words);
   }
 
@@ -27,7 +26,7 @@ class Cloud extends React.Component {
       <div>
         <div className="toggle-button">
           <label className="switch">
-              <input onClick={ this.props.toggleProperNouns } type="checkbox"></input>
+              <input onClick={this.props.toggleProperNouns} type="checkbox"></input>
               <div className="slider"></div>
           </label>
           <p>Proper nouns</p>
@@ -35,7 +34,7 @@ class Cloud extends React.Component {
 
         <div className="toggle-button">
           <label className="switch">
-              <input onClick={ this.props.toggleCommonNouns } type="checkbox"></input>
+              <input onClick={this.props.toggleCommonNouns} type="checkbox"></input>
               <div className="slider"></div>
           </label>
           <p>Common nouns</p>
@@ -54,16 +53,20 @@ class Cloud extends React.Component {
       <div>
         <div className="text-area cloud-text">
           <h3>Word Frequency</h3>
+
           { this.toggleButtons() }
+
         </div>
 
         <div className="word-cloud">
+
           <WordCloud
-            data={ this.data() }
-            fontSizeMapper={ fontSizeMapper }
-            rotate={ rotate }
-            padding={ 4 }>
+            data={this.data()}
+            fontSizeMapper={fontSizeMapper}
+            rotate={rotate}
+            padding={4}>
           </WordCloud>
+          
         </div>
       </div>
     );

@@ -6,17 +6,16 @@ import { toneColors } from '../colors';
 class ToneSummary extends React.Component {
   constructor(props) {
     super(props);
-    this.renderBar = this.renderBar.bind(this);
   }
 
   renderBar(emotion) {
-    const data = [{x: emotion, y: this.props.summary[emotion]}];
+    const data = [{ x: emotion, y: this.props.summary[emotion] }];
     return (
       <VictoryBar
         key={emotion + "tonesummary"}
         data={data}
         style={{
-          data: {fill: toneColors[emotion]}
+          data: { fill: toneColors[emotion] }
         }}>
       </VictoryBar>
     );
@@ -29,14 +28,14 @@ class ToneSummary extends React.Component {
     return (
       <VictoryGroup horizontal
         offset={25}
-        padding={{top: 40, bottom: 40, left: 40, right: 40}}
+        padding={{ top: 100, bottom: 0, left: 40, right: 40 }}
         style={{
-          data: {width: 20}
+          data: { width: 20 }
         }}>
 
         { bars }
 
-      </VictoryGroup>
+      </VictoryGroup> // this needs fixing! adjust padding
     );
   }
 }

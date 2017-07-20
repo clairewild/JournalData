@@ -7,7 +7,6 @@ import { toneColors } from '../colors';
 class ToneArea extends React.Component {
   constructor(props) {
     super(props);
-    this.renderArea = this.renderArea.bind(this);
   }
 
   renderArea(emotion) {
@@ -19,7 +18,7 @@ class ToneArea extends React.Component {
         x="date"
         y={(datum) => datum.percentage * 100.00}
         style={{
-          data: {fill: toneColors[emotion]}
+          data: { fill: toneColors[emotion] }
         }}>
       </VictoryArea>
     );
@@ -30,10 +29,10 @@ class ToneArea extends React.Component {
     const areas = emotions.map(emotion => this.renderArea(emotion));
 
     const first_date = this.props.date.min;
-    const first_moment = Moment(first_date)
+    const first_moment = Moment(first_date);
 
     return (
-      <VictoryChart height={140} padding={{top: 0, bottom: 40, left: 40, right: 40}}>
+      <VictoryChart height={140} padding={{ top: 0, bottom: 40, left: 40, right: 40 }}>
 
         <VictoryAxis
           scale="date"
