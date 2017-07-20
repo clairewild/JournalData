@@ -9,11 +9,29 @@ class PronounsArea extends React.Component {
     super(props);
   }
 
+  renderArea(pronoun) {
+    const p = pronoun // lower case and connect w/ _
+    const data = this.props.area[p]
+    return (
+      <VictoryArea
+        data={data}
+        x="date"
+        y={(datum) => datum.percentage * 100.00}
+        style={{
+          data: { fill: pronounColors[pronoun] }
+        }}>
+      </VictoryArea>
+    );
+  }
+
   render() {
+    const pronouns = ["Third Person", "Second Person", "First Plural", "First Person"];
+    const areas = pronouns.map(pronoun => this.renderArea(pronoun));
+
     const first_person_data = this.props.area.first_person;
     const first_plural_data = this.props.area.first_plural;
     const second_person_data = this.props.area.second_person;
-    const third_person_data = this.props.area.third_person;
+    const third_person_data = this.props.area.third_person; // delete these
     const first_date = this.props.date.min;
     const first_moment = Moment(first_date)
 
