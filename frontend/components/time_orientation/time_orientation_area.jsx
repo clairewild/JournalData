@@ -18,7 +18,7 @@ class TimeOrientationArea extends React.Component {
         x="date"
         y={(datum) => datum.percentage * 100.00}
         style={{
-          data: {fill: timeColors[tense]}
+          data: { fill: timeColors[tense] }
         }}>
       </VictoryArea>
     );

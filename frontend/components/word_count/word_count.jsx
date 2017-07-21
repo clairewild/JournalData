@@ -39,8 +39,8 @@ class WordCount extends React.Component {
         <VictoryScatter
           data={this.props.word_count}
           x={(datum) => this.parseDate(datum.date)}
-          y={(datum) => this.parseTime(datum.date)}
-        />
+          y={(datum) => this.parseTime(datum.date)}>
+        </VictoryScatter>
 
       </VictoryChart>
     );

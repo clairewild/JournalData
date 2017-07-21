@@ -27,7 +27,7 @@ class PronounsPie extends React.Component {
         y="value"
         labels={datum => `${datum.person}: ${Math.round(datum.value * 100)}%`}
         labelComponent={ <VictoryTooltip /> }
-        labelRadius={ 50 }
+        labelRadius={50}
         style={{
           data: { fill: datum => pronounColors[datum.person] }
         }}>

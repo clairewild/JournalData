@@ -24,7 +24,7 @@ class TimeOrientationPie extends React.Component {
         x="tense"
         y="value"
         labels={datum => `${datum.tense}: ${Math.round(datum.value * 100)}%`}
-        labelComponent={<VictoryTooltip />}
+        labelComponent={ <VictoryTooltip /> }
         labelRadius={50}
 
         style={{

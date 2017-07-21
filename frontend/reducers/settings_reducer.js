@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 
-import { TOGGLE_PROPER_NOUNS, TOGGLE_COMMON_NOUNS } from '../actions/actions.js';
+import { TOGGLE_PROPER_NOUNS, TOGGLE_COMMON_NOUNS } from '../actions/actions';
 
 const _state = {
   proper_nouns: true,

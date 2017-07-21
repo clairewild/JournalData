@@ -15,11 +15,11 @@ class Pronouns extends React.Component {
     return (
       <div>
         <div className="pie-with-text">
-          <PronounsPie pie={ this.props.pie } className="pie-chart"/>
-          <PronounsText max={ maxFirstTense } />
+          <PronounsPie pie={this.props.pie} className="pie-chart"/>
+          <PronounsText max={maxFirstTense} />
         </div>
 
-        <PronounsArea area={ this.props.area } date={ this.props.date } />
+        <PronounsArea area={this.props.area} date={this.props.date} />
       </div>
     );
   }

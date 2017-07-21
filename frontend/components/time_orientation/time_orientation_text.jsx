@@ -21,7 +21,7 @@ class TimeOrientationText extends React.Component {
     return (
       <div className="text-area">
         <h3>Time Orientation</h3>
-        <p>{ `Verb tense analysis shows you're more focused on the ${this.props.max} than on the ${tenses[0]} or ${tenses[1]}.` }</p>
+        <p>{`Verb tense analysis shows you're more focused on the ${this.props.max} than on the ${tenses[0]} or ${tenses[1]}.`}</p>
         <ul className="legend">
 
           { legend }

@@ -32,7 +32,7 @@ class PronounsArea extends React.Component {
     const first_moment = Moment(first_date)
 
     return (
-      <VictoryChart height={140} padding={{top: 0, bottom: 40, left: 40, right: 40}} >
+      <VictoryChart height={140} padding={{ top: 0, bottom: 40, left: 40, right: 40 }}>
 
         <VictoryAxis
           scale="date"

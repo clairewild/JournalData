@@ -16,7 +16,7 @@ class FileUpload extends React.Component {
         <h3>Upload Day One JSON</h3>
 
         <form action="upload" method="post" encType="multipart/form-data">
-          <label onClick={ this.deactivateButton } className="button label-button">
+          <label onClick={this.deactivateButton} className="button label-button">
             <input type="file" name="file" />
             Choose file
           </label>
