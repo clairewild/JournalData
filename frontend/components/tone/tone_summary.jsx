@@ -1,5 +1,5 @@
 import React from 'react';
-import { VictoryGroup, VictoryBar, VictoryAxis } from 'victory';
+import { VictoryGroup, VictoryStack, VictoryBar, VictoryAxis } from 'victory';
 
 import { toneColors } from '../colors';
 
@@ -11,13 +11,28 @@ class ToneSummary extends React.Component {
   renderBar(emotion) {
     const data = [{ x: emotion, y: this.props.summary[emotion] }];
     return (
-      <VictoryBar
+      <VictoryStack horizontal
         key={emotion + "tonesummary"}
-        data={data}
-        style={{
-          data: { fill: toneColors[emotion] }
-        }}>
-      </VictoryBar>
+        domain={{ x: [0, 1] }}>
+
+        <VictoryBar
+          data={data}
+          labels={datum => datum.x}
+          style={{
+            data: { fill: toneColors[emotion] }
+          }}>
+        </VictoryBar>
+
+        <VictoryBar
+          data={data}
+          y={datum => 1 - datum.y}
+          labels={datum => datum.y}
+          style={{
+            data: { fill: "whitesmoke" }
+          }}>
+        </VictoryBar>
+
+      </VictoryStack>
     );
   }
 
@@ -28,14 +43,17 @@ class ToneSummary extends React.Component {
     return (
       <VictoryGroup horizontal
         offset={25}
-        padding={{ top: 100, bottom: 0, left: 40, right: 40 }}
+        width={380}
+        height={250}
+        padding={{ top: 100, bottom: 100, left: 100, right: 100 }}
         style={{
-          data: { width: 20 }
+          data: { width: 17 },
+          labels: { fontSize: 11 }
         }}>
 
         { bars }
 
-      </VictoryGroup> // this needs fixing! adjust padding
+      </VictoryGroup>
     );
   }
 }
