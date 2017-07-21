@@ -10,7 +10,7 @@ class PronounsArea extends React.Component {
   }
 
   renderArea(pronoun) {
-    const p = pronoun // lower case and connect w/ _
+    const p = pronoun.toLowerCase().replace(" ", "_");
     const data = this.props.area[p]
     return (
       <VictoryArea
@@ -28,10 +28,6 @@ class PronounsArea extends React.Component {
     const pronouns = ["Third Person", "Second Person", "First Plural", "First Person"];
     const areas = pronouns.map(pronoun => this.renderArea(pronoun));
 
-    const first_person_data = this.props.area.first_person;
-    const first_plural_data = this.props.area.first_plural;
-    const second_person_data = this.props.area.second_person;
-    const third_person_data = this.props.area.third_person; // delete these
     const first_date = this.props.date.min;
     const first_moment = Moment(first_date)
 
@@ -50,41 +46,7 @@ class PronounsArea extends React.Component {
             }
           } />
 
-        <VictoryArea
-          data={third_person_data}
-          x="date"
-          y={(datum) => datum.percentage * 100.00}
-          style={{
-            data: {fill: pronounColors["Third Person"]}
-          }}>
-        </VictoryArea>
-
-        <VictoryArea
-          data={second_person_data}
-          x="date"
-          y={(datum) => datum.percentage * 100.00}
-          style={{
-            data: {fill: pronounColors["Second Person"]}
-          }}>
-        </VictoryArea>
-
-        <VictoryArea
-          data={first_plural_data}
-          x="date"
-          y={(datum) => datum.percentage * 100.00}
-          style={{
-            data: {fill: pronounColors["First Plural"]}
-          }}>
-        </VictoryArea>
-
-        <VictoryArea
-          data={first_person_data}
-          x="date"
-          y={(datum) => datum.percentage * 100.00}
-          style={{
-            data: {fill: pronounColors["First Person"]}
-          }}>
-        </VictoryArea>
+        { areas }
 
       </VictoryChart>
     );
