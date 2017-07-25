@@ -20,13 +20,14 @@ class ToneSummary extends React.Component {
           labels={datum => datum.x}
           style={{
             data: { fill: toneColors[emotion] }
+
           }}>
         </VictoryBar>
 
         <VictoryBar
           data={data}
           y={datum => 1 - datum.y}
-          labels={datum => datum.y}
+          labels={datum => Math.round(datum.y * 100) / 100}
           style={{
             data: { fill: "whitesmoke" }
           }}>

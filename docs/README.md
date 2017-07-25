@@ -17,13 +17,14 @@ Users will be able to sign into their Dropbox account, and the app will find tex
 - positivity vs. negativity
 - sentiment analysis
 - subjects / pronoun usage (I / you / we / they / he-she-proper)
-- pie chart topics for day/month/year
+- pie chart topics for day / month / year
 
 ## Architecture and Technologies
 
 - React
 - Flask
-- spaCy (python library)
+- spaCy (python NLP library)
+- Watson API
 - Victory (React chart library)
 
 ## Implementation Priorities
