@@ -9,6 +9,9 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'
+      },
+      {
         test: [/\.jsx?$/, /\.js?$/],
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',

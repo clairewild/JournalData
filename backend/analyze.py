@@ -6,7 +6,7 @@ import spacy
 nlp = spacy.load('en')
 
 from backend.word_count import word_count_fn
-# from backend.word_cloud import word_cloud_fn
+from backend.word_cloud import word_cloud_fn
 from backend.python_word_cloud import new_word_cloud_fn
 from backend.pronouns import pronouns_fn
 from backend.time_orientation import time_orientation_fn
@@ -174,7 +174,7 @@ def analyze_json():
             data["tone"]["area"][emotion].append(obj)
 
     # Pass all text from all entries to word cloud function
-    # data["word_cloud"] = word_cloud_fn(nlp, all_text)
+    data["word_cloud"] = word_cloud_fn(nlp, all_text)
     new_word_cloud_fn(nlp, all_text)
 
     # Pass all text from all entries to overall tone analysis function

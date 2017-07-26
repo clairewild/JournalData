@@ -20,7 +20,6 @@ class ToneSummary extends React.Component {
           labels={datum => datum.x}
           style={{
             data: { fill: toneColors[emotion] }
-
           }}>
         </VictoryBar>
 
