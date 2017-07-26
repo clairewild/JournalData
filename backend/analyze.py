@@ -2,8 +2,12 @@ import json
 import time
 import os.path
 
+import spacy
+nlp = spacy.load('en')
+
 from backend.word_count import word_count_fn
-from backend.word_cloud import word_cloud_fn
+# from backend.word_cloud import word_cloud_fn
+from backend.python_word_cloud import new_word_cloud_fn
 from backend.pronouns import pronouns_fn
 from backend.time_orientation import time_orientation_fn
 from backend.tone import entry_tone_fn
@@ -107,9 +111,9 @@ def analyze_json():
         text = entry["text"]
         all_text += text
 
-        count_analysis = word_count_fn(text)
-        pronoun_analysis = pronouns_fn(text)
-        time_analysis = time_orientation_fn(text)
+        count_analysis = word_count_fn(nlp, text)
+        pronoun_analysis = pronouns_fn(nlp, text)
+        time_analysis = time_orientation_fn(nlp, text)
         tone_analysis = entry_tone_fn(text)
 
         # TODO: refactor this!!?? it's not very DRY, can we use some metaprogramming maybe?
@@ -170,7 +174,8 @@ def analyze_json():
             data["tone"]["area"][emotion].append(obj)
 
     # Pass all text from all entries to word cloud function
-    data["word_cloud"] = word_cloud_fn(all_text)
+    # data["word_cloud"] = word_cloud_fn(nlp, all_text)
+    new_word_cloud_fn(nlp, all_text)
 
     # Pass all text from all entries to overall tone analysis function
     data["tone"]["summary"] = overall_tone_fn(all_text)

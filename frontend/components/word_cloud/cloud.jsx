@@ -1,25 +1,26 @@
 import React from 'react';
 import { render } from 'react-dom';
-import WordCloud from 'react-d3-cloud';
+// import WordCloud from 'react-d3-cloud';
 
 class Cloud extends React.Component {
   constructor(props) {
     super(props);
-    this.data = this.data.bind(this);
+    // this.data = this.data.bind(this);
+    this.cloudImage = this.cloudImage.bind(this);
   }
 
-  data() {
-    let entities = this.props.word_cloud.entities;
-    let other_words = this.props.word_cloud.other_words;
-
-    if (!this.props.proper_nouns) {
-      entities = [];
-    }
-    if (!this.props.common_nouns) {
-      other_words = [];
-    }
-    return entities.concat(other_words);
-  }
+  // data() {
+  //   let entities = this.props.word_cloud.entities;
+  //   let other_words = this.props.word_cloud.other_words;
+  //
+  //   if (!this.props.proper_nouns) {
+  //     entities = [];
+  //   }
+  //   if (!this.props.common_nouns) {
+  //     other_words = [];
+  //   }
+  //   return entities.concat(other_words);
+  // }
 
   toggleButtons() {
     return (
@@ -43,11 +44,28 @@ class Cloud extends React.Component {
     );
   }
 
-  render() {
-    const fontSizeMapper = word => Math.log2(word.value) * 5;
-    const rotate = word => {
-      return (Math.random() >= 0.5) ? 0 : 90;
+  cloudImage() {
+    let filename = "book_mask.png";
+
+    if (this.props.proper_nouns && this.props.common_nouns) {
+      filename = "allwords.png";
     }
+    else if (this.props.proper_nouns) {
+      filename = "entities.png";
+    }
+    else if (this.props.common_nouns) {
+      filename = "otherwords.png";
+    }
+    return (
+      <img src={`../../../assets/${filename}`} alt="word-cloud" />
+    );
+  }
+
+  render() {
+    // const fontSizeMapper = word => Math.log2(word.value) * 5;
+    // const rotate = word => {
+    //   return (Math.random() >= 0.5) ? 0 : 90;
+    // }
 
     return (
       <div>
@@ -60,13 +78,8 @@ class Cloud extends React.Component {
 
         <div className="word-cloud">
 
-          <WordCloud
-            data={this.data()}
-            fontSizeMapper={fontSizeMapper}
-            rotate={rotate}
-            padding={4}>
-          </WordCloud>
-          
+          { this.cloudImage() }
+
         </div>
       </div>
     );
@@ -74,3 +87,10 @@ class Cloud extends React.Component {
 }
 
 export default Cloud;
+
+// <WordCloud
+//   data={this.data()}
+//   fontSizeMapper={fontSizeMapper}
+//   rotate={rotate}
+//   padding={4}>
+// </WordCloud>

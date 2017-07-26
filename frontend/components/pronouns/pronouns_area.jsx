@@ -14,6 +14,7 @@ class PronounsArea extends React.Component {
     const data = this.props.area[p]
     return (
       <VictoryArea
+        key={pronoun + "pronounarea"}
         data={data}
         x="date"
         y={(datum) => datum.percentage * 100.00}

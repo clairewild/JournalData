@@ -1,7 +1,4 @@
-import spacy
-nlp = spacy.load('en')
-
-def pronouns_fn(str):
+def pronouns_fn(nlp, str):
     document = nlp(str)
 
     first_person_count = 0

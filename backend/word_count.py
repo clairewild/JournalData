@@ -1,7 +1,4 @@
-import spacy
-nlp = spacy.load('en')
-
-def word_count_fn(str):
+def word_count_fn(nlp, str):
     document = nlp(str)
     word_count = 0
 

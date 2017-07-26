@@ -1,7 +1,4 @@
-import spacy
-nlp = spacy.load('en')
-
-def time_orientation_fn(str):
+def time_orientation_fn(nlp, str):
     document = nlp(str)
 
     past_count = 0
