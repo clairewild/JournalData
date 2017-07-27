@@ -4,6 +4,7 @@ import Cloud from './cloud';
 import { toggleProperNouns, toggleOtherWords } from '../../actions/actions';
 
 const mapStateToProps = state => ({
+  urls: state.data.word_cloud,
   proper_nouns: state.settings.proper_nouns,
   other_words: state.settings.other_words
 });

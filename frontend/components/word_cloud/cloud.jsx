@@ -30,19 +30,20 @@ class Cloud extends React.Component {
   }
 
   cloudImage() {
-    let filename = "book_mask.png";
+    const urls = this.props.urls;
+    let url = ""; // TODO: loading image
 
     if (this.props.proper_nouns && this.props.other_words) {
-      filename = "allwords.png";
+      url = urls.all_words;
     }
     else if (this.props.proper_nouns) {
-      filename = "entities.png";
+      url = urls.proper_nouns;
     }
     else if (this.props.other_words) {
-      filename = "otherwords.png";
+      url = urls.other_words;
     }
     return (
-      <img src="https://res.cloudinary.com/dq5kxnx9d/image/upload/v1501122162/allwords.png" alt="word-cloud" />
+      <img src={url} alt="word-cloud" />
     );
   }
 

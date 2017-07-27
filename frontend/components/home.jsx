@@ -37,7 +37,7 @@ class Home extends React.Component {
         <Nav />
         <div id="nav-buffer"></div>
 
-        {this.renderFileUpload()}
+        { this.renderFileUpload() }
 
         <div className="full-width-element" id="full-width-cloud">
           <div className="inner-element" id="inner-cloud">
