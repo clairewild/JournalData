@@ -4,10 +4,6 @@ import { RECEIVE_DATA } from '../actions/actions.js';
 
 const _state = {
   word_count: [],
-  word_cloud: {
-    entities: [],
-    other_words: []
-  },
   pronouns: {
     area: {
       first_person: [{"date": 1.0, "percentage": 1.0}, {"date": 2.0, "percentage": 1.0}],

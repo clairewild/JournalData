@@ -1,36 +1,50 @@
+import os
+import numpy
+import cloudinary
+import cloudinary.uploader as Cloud
+from PIL import Image
+from wordcloud import WordCloud, STOPWORDS
+
+import keys
+
 def word_cloud_fn(nlp, str):
     document = nlp(str)
-    entity_count = {}
-    other_word_count = {}
+    entities = ""
 
     ent_types = ["GPE", "PERSON", "LOC", "ORG", "WORK_OF_ART"]
 
     for ent in document.ents:
         if ent.label_ in ent_types:
-            if ent.text in entity_count:
-                entity_count[ent.text] += 1
-            else:
-                entity_count[ent.text] = 1
+            entities += " " + ent.text
 
-    for token in document:
-        if token.text not in entity_count:
-            if len(token.lemma_) > 2 and token.lemma_ != "-PRON-":
-                if token.lemma_ in other_word_count:
-                    other_word_count[token.lemma_] += 1
-                else:
-                    other_word_count[token.lemma_] = 1
+    book_mask = numpy.array(Image.open("./assets/book_mask.png"))
+    stopwords = set(STOPWORDS)
+    stopwords.add("said")
 
-    data = {
-        "entities": [],
-        "other_words": []
-    }
+    wc = WordCloud(background_color="white", max_words=2000, mask=book_mask,
+                   stopwords=stopwords)
 
-    for text, value in entity_count.items():
-        obj = { "text": text, "value": value }
-        data["entities"].append(obj)
+    # Word cloud with all words except stopwords
+    wc.generate(str)
+    wc.to_file("./allwords.png")
 
-    for text, value in other_word_count.items():
-        obj = { "text": text, "value": value }
-        data["other_words"].append(obj)
+    # Word cloud with proper nouns only
+    wc.generate(entities)
+    wc.to_file("./entities.png")
 
-    return data
+    # Word cloud with other words only
+    for word in entities.split():
+        stopwords.add(word)
+
+    wc.generate(str)
+    wc.to_file("./otherwords.png")
+
+    # Upload images to cloudinary
+
+img = Cloud.upload("allwords.png",
+                   public_id="allwords"
+                   cloud_name=keys.cloud_name,
+                   api_key=keys.cloud_key,
+                   api_secret=keys.cloud_secret)
+
+print(img['secure_url'])

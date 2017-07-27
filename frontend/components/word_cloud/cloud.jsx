@@ -42,7 +42,7 @@ class Cloud extends React.Component {
       filename = "otherwords.png";
     }
     return (
-      <img src={require(`../../../assets/${filename}`)} alt="word-cloud" />
+      <img src={`./${filename}`} alt="word-cloud" />
     );
   }
 

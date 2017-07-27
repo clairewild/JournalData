@@ -4,7 +4,6 @@ import Cloud from './cloud';
 import { toggleProperNouns, toggleCommonNouns } from '../../actions/actions';
 
 const mapStateToProps = state => ({
-  word_cloud: state.data.word_cloud,
   proper_nouns: state.settings.proper_nouns,
   common_nouns: state.settings.common_nouns
 });
