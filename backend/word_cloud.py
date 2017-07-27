@@ -21,7 +21,9 @@ def word_cloud_fn(nlp, str):
     stopwords = set(STOPWORDS)
     stopwords.add("said")
 
-    wc = WordCloud(background_color="white", max_words=2000, mask=book_mask,
+    wc = WordCloud(background_color="white",
+                   max_words=2000,
+                   mask=book_mask,
                    stopwords=stopwords)
 
     # Word cloud with all words except stopwords
@@ -40,11 +42,15 @@ def word_cloud_fn(nlp, str):
     wc.to_file("./otherwords.png")
 
     # Upload images to cloudinary
+    for cloudtype in ["allwords", "entities", "otherwords"]:
+        filename = cloudtype + ".png"
+        img = Cloud.upload(filename,
+                           public_id=cloudtype,
+                           cloud_name=keys.cloud_name,
+                           api_key=keys.cloud_key,
+                           api_secret=keys.cloud_secret)
 
-img = Cloud.upload("allwords.png",
-                   public_id="allwords"
-                   cloud_name=keys.cloud_name,
-                   api_key=keys.cloud_key,
-                   api_secret=keys.cloud_secret)
+        data[cloudtype] = img['secure_url']
+        os.remove(filename)
 
-print(img['secure_url'])
+    return data

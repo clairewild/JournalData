@@ -42,7 +42,7 @@ class Cloud extends React.Component {
       filename = "otherwords.png";
     }
     return (
-      <img src={`./${filename}`} alt="word-cloud" />
+      <img src="https://res.cloudinary.com/dq5kxnx9d/image/upload/v1501122162/allwords.png" alt="word-cloud" />
     );
   }
 

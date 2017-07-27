@@ -1,6 +1,6 @@
 .word-cloud {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .text-area.cloud-text {
