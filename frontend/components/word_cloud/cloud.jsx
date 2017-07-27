@@ -20,10 +20,10 @@ class Cloud extends React.Component {
 
         <div className="toggle-button">
           <label className="switch">
-              <input onClick={this.props.toggleCommonNouns} type="checkbox"></input>
+              <input onClick={this.props.toggleOtherWords} type="checkbox"></input>
               <div className="slider"></div>
           </label>
-          <p>Common nouns</p>
+          <p>Other words</p>
         </div>
       </div>
     );
@@ -32,13 +32,13 @@ class Cloud extends React.Component {
   cloudImage() {
     let filename = "book_mask.png";
 
-    if (this.props.proper_nouns && this.props.common_nouns) {
+    if (this.props.proper_nouns && this.props.other_words) {
       filename = "allwords.png";
     }
     else if (this.props.proper_nouns) {
       filename = "entities.png";
     }
-    else if (this.props.common_nouns) {
+    else if (this.props.other_words) {
       filename = "otherwords.png";
     }
     return (

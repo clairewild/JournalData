@@ -16,6 +16,11 @@ def analyze_json():
 
     data = {
         "word_count": [],
+        "word_cloud": {
+            "all_words": "",
+            "proper_nouns": "",
+            "other_words": ""
+        },
         "pronouns": {
             "area": {
                 "first_person": [],
@@ -172,7 +177,7 @@ def analyze_json():
             data["tone"]["area"][emotion].append(obj)
 
     # Pass all text from all entries to word cloud function
-    word_cloud_fn(nlp, all_text)
+    data["word_cloud"] = word_cloud_fn(nlp, all_text)
 
     # Pass all text from all entries to overall tone analysis function
     data["tone"]["summary"] = overall_tone_fn(all_text)

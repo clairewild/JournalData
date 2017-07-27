@@ -18,7 +18,7 @@ export const toggleProperNouns = () => ({
   type: TOGGLE_PROPER_NOUNS
 });
 
-export const TOGGLE_COMMON_NOUNS = "TOGGLE_COMMON_NOUNS";
-export const toggleCommonNouns = () => ({
-  type: TOGGLE_COMMON_NOUNS
+export const TOGGLE_OTHER_WORDS = "TOGGLE_OTHER_WORDS";
+export const toggleOtherWords = () => ({
+  type: TOGGLE_OTHER_WORDS
 });

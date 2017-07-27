@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
 
 import Cloud from './cloud';
-import { toggleProperNouns, toggleCommonNouns } from '../../actions/actions';
+import { toggleProperNouns, toggleOtherWords } from '../../actions/actions';
 
 const mapStateToProps = state => ({
   proper_nouns: state.settings.proper_nouns,
-  common_nouns: state.settings.common_nouns
+  other_words: state.settings.other_words
 });
 
 const mapDispatchToProps = dispatch => ({
   toggleProperNouns: () => dispatch(toggleProperNouns()),
-  toggleCommonNouns: () => dispatch(toggleCommonNouns())
+  toggleOtherWords: () => dispatch(toggleOtherWords())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cloud);

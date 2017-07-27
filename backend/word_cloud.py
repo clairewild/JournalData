@@ -28,21 +28,22 @@ def word_cloud_fn(nlp, str):
 
     # Word cloud with all words except stopwords
     wc.generate(str)
-    wc.to_file("./allwords.png")
+    wc.to_file("./all_words.png")
 
     # Word cloud with proper nouns only
     wc.generate(entities)
-    wc.to_file("./entities.png")
+    wc.to_file("./proper_nouns.png")
 
     # Word cloud with other words only
     for word in entities.split():
         stopwords.add(word)
 
     wc.generate(str)
-    wc.to_file("./otherwords.png")
+    wc.to_file("./other_words.png")
 
     # Upload images to cloudinary
-    for cloudtype in ["allwords", "entities", "otherwords"]:
+    data = {}
+    for cloudtype in ["all_words", "proper_nouns", "other_words"]:
         filename = cloudtype + ".png"
         img = Cloud.upload(filename,
                            public_id=cloudtype,
