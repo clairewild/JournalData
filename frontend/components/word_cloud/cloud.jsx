@@ -31,9 +31,10 @@ class Cloud extends React.Component {
 
   cloudImage() {
     const urls = this.props.urls;
-    let url = ""; // TODO: loading image
+    let url = "https://res.cloudinary.com/dq5kxnx9d/image/upload/v1501873828/loading_lfknuu.png";
 
     if (this.props.proper_nouns && this.props.other_words) {
+      debugger;
       url = urls.all_words;
     }
     else if (this.props.proper_nouns) {

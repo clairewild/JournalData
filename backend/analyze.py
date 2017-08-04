@@ -178,7 +178,6 @@ def analyze_json():
 
     # Pass all text from all entries to word cloud function
     data["word_cloud"] = word_cloud_fn(nlp, all_text)
-    print(data["word_cloud"])
 
     # Pass all text from all entries to overall tone analysis function
     data["tone"]["summary"] = overall_tone_fn(all_text)

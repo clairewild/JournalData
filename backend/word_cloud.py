@@ -1,8 +1,10 @@
 import os
 import numpy
+import requests
 import cloudinary
 import cloudinary.uploader as Cloud
 from PIL import Image
+from io import BytesIO
 from wordcloud import WordCloud, STOPWORDS
 
 import keys
@@ -17,7 +19,8 @@ def word_cloud_fn(nlp, str):
         if ent.label_ in ent_types:
             entities += " " + ent.text
 
-    book_mask = numpy.array(Image.open("./assets/book_mask.png"))
+    resp = requests.get("https://res.cloudinary.com/dq5kxnx9d/image/upload/v1501872988/book_mask_olgmeu.jpg")
+    book_mask = numpy.array(Image.open(BytesIO(resp.content)))
     stopwords = set(STOPWORDS)
     stopwords.add("said")
 
