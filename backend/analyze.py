@@ -41,6 +41,52 @@ def date_range(entry_stream):
 
     return (first_date, last_date)
 
+def analyze_entry(entry, difference, data):
+    text = entry["text"]
+
+    count_analysis = word_count_fn(nlp, text) #TODO: how many of these are seperately tokenizing?
+    pronoun_analysis = pronouns_fn(nlp, text)
+    time_analysis = time_orientation_fn(nlp, text)
+    tone_analysis = entry_tone_fn(text)
+
+    #######################
+    ### Word Count
+
+    count = {"date": entry["creationDate"], "count": count_analysis}
+    data["word_count"].append(count)
+
+    #######################
+    ### Pronouns
+
+    add = 0
+    for person in ["first_person", "first_plural", "second_person", "third_person"]:
+        person_percentage = pronoun_analysis["percentages"][person] + add
+        add = person_percentage
+        obj = {"date": difference, "percentage": person_percentage}
+        data["pronouns"]["area"][person].append(obj)
+        data["pronouns"]["pie"][person] += pronoun_analysis["counts"][person]
+
+    #######################
+    ### Time Orientation
+
+    add = 0
+    for tense in ["past", "present", "future"]:
+        tense_percentage = time_analysis["percentages"][tense] + add
+        add = tense_percentage
+        obj = {"date": difference, "percentage": tense_percentage}
+        data["time_orientation"]["area"][tense].append(obj)
+        data["time_orientation"]["pie"][tense] += time_analysis["counts"][tense]
+
+    #######################
+    ### Tone analysis
+
+    add = 0
+    for emotion in ["Joy", "Fear", "Sadness", "Anger", "Disgust"]:
+        emotion_percentage = tone_analysis[emotion] + add
+        add = emotion_percentage
+        obj = {"date": difference, "percentage": emotion_percentage}
+        data["tone"]["area"][emotion].append(obj)
+
 def analyze_json():
 
     data = {
@@ -113,18 +159,14 @@ def analyze_json():
     all_text = ""
 
     for entry, date in entry_stream:
-        text = entry["text"]
-        all_text += text
+        all_text += entry["text"]
 
         date = time.strptime(date, '%Y-%m-%dT%H:%M:%SZ')
         difference = time.mktime(date) - time.mktime(first_date)
 
-        analyze_entry(text, difference, data) # TODO: make this asynchronous?
+        analyze_entry(entry, difference, data) # TODO: make this asynchronous?
 
-    # Pass all text from all entries to word cloud function
     data["word_cloud"] = word_cloud_fn(nlp, all_text)
-
-    # Pass all text from all entries to overall tone analysis function
     data["tone"]["summary"] = overall_tone_fn(all_text)
 
     if path == "./uploads/diary.json":
@@ -132,60 +174,3 @@ def analyze_json():
         os.remove(path)
 
     return data
-
-def analyze_entry(text, difference, data):
-    count_analysis = word_count_fn(nlp, text)
-    pronoun_analysis = pronouns_fn(nlp, text)
-    time_analysis = time_orientation_fn(nlp, text)
-    tone_analysis = entry_tone_fn(text)
-
-    # TODO: refactor this!!?? it's not very DRY, can we use some metaprogramming maybe?
-
-    #######################
-    ### Word Count
-
-    count = {"date": entry["creationDate"], "count": count_analysis}
-    data["word_count"].append(count)
-
-    #######################
-    ### Pronouns
-
-    first_person_percentage = pronoun_analysis["percentages"]["first_person"]
-    first_person = {"date": difference, "percentage": first_person_percentage}
-    data["pronouns"]["area"]["first_person"].append(first_person)
-    data["pronouns"]["pie"]["first_person"] += pronoun_analysis["counts"]["first_person"]
-
-    first_plural_percentage = pronoun_analysis["percentages"]["first_person"] + pronoun_analysis["percentages"]["first_plural"]
-    first_plural = {"date": difference, "percentage": first_plural_percentage}
-    data["pronouns"]["area"]["first_plural"].append(first_plural)
-    data["pronouns"]["pie"]["first_plural"] += pronoun_analysis["counts"]["first_plural"]
-
-    second_person_percentage = pronoun_analysis["percentages"]["first_person"] + pronoun_analysis["percentages"]["first_plural"] + pronoun_analysis["percentages"]["second_person"]
-    second_person = {"date": difference, "percentage": second_person_percentage}
-    data["pronouns"]["area"]["second_person"].append(second_person)
-    data["pronouns"]["pie"]["second_person"] += pronoun_analysis["counts"]["second_person"]
-
-    third_person = {"date": difference, "percentage": 1.0}
-    data["pronouns"]["area"]["third_person"].append(third_person)
-    data["pronouns"]["pie"]["third_person"] += pronoun_analysis["counts"]["third_person"]
-
-    #######################
-    ### Time Orientation
-
-    add = 0
-    for tense in ["past", "present", "future"]:
-        tense_percentage = time_analysis["percentages"][tense] + add
-        add = tense_percentage
-        obj = {"date": difference, "percentage": tense_percentage}
-        data["time_orientation"]["area"][tense].append(obj)
-        data["time_orientation"]["pie"][tense] += time_analysis["counts"][tense]
-
-    #######################
-    ### Tone analysis
-
-    add = 0
-    for emotion in ["Joy", "Fear", "Sadness", "Anger", "Disgust"]:
-        emotion_percentage = tone_analysis[emotion] + add
-        add = emotion_percentage
-        obj = {"date": difference, "percentage": emotion_percentage}
-        data["tone"]["area"][emotion].append(obj)
