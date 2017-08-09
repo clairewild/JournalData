@@ -13,7 +13,11 @@ class Tone extends React.Component {
       <div>
         <div className="pie-with-text">
           <ToneSummary summary={this.props.summary} />
-          <p>This is where some text will go...</p>
+
+          <div className="text-area">
+            <h3>Tone Analysis</h3>
+            <p>Some explaination of the Watson API tone anaysis...</p>
+          </div>
         </div>
 
         <ToneArea area={this.props.area} date={this.props.date} />

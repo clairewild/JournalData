@@ -41,19 +41,32 @@ class ToneSummary extends React.Component {
     const bars = emotions.map(emotion => this.renderBar(emotion));
 
     return (
-      <VictoryGroup horizontal
-        offset={25}
-        width={380}
-        height={250}
-        padding={{ top: 100, bottom: 100, left: 100, right: 100 }}
-        style={{
-          data: { width: 17 },
-          labels: { fontSize: 11 }
-        }}>
+      <div>
+        <VictoryGroup horizontal
+          offset={25}
+          width={380}
+          height={250}
+          padding={{ top: 100, bottom: 100, left: 100, right: 100 }}
+          style={{
+            data: { width: 17 },
+            labels: { fontSize: 11 }
+          }}>
 
-        { bars }
+          { bars }
 
-      </VictoryGroup>
+        </VictoryGroup>
+
+        <VictoryAxis dependentAxis
+          height={}
+          width={}
+          padding={}
+          style={
+
+          }
+          tickLabelComponent={}
+          tickValues={}>
+        </VictoryAxis>
+      </div>
     );
   }
 }

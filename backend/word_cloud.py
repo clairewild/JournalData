@@ -19,7 +19,7 @@ def word_cloud_fn(nlp, str):
         if ent.label_ in ent_types:
             entities += " " + ent.text
 
-    resp = requests.get("https://res.cloudinary.com/dq5kxnx9d/image/upload/v1501872988/book_mask_olgmeu.jpg")
+    resp = requests.get("https://res.cloudinary.com/dq5kxnx9d/image/upload/v1501875232/book_mask_olgmeu.jpg")
     book_mask = numpy.array(Image.open(BytesIO(resp.content)))
     stopwords = set(STOPWORDS)
     stopwords.add("said")
