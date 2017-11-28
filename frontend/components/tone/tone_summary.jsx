@@ -56,16 +56,6 @@ class ToneSummary extends React.Component {
 
         </VictoryGroup>
 
-        <VictoryAxis dependentAxis
-          height={}
-          width={}
-          padding={}
-          style={
-
-          }
-          tickLabelComponent={}
-          tickValues={}>
-        </VictoryAxis>
       </div>
     );
   }

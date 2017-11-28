@@ -3,7 +3,7 @@ import time
 import os.path
 
 import spacy
-nlp = spacy.load('en')
+nlp = spacy.load('en_core_web_sm')
 
 from backend.word_count import word_count_fn
 from backend.word_cloud import word_cloud_fn

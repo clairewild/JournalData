@@ -22,16 +22,16 @@ git clone https://github.com/clairewild/JournalData.git
 python -V
 
 # If not then download it here https://www.python.org/downloads/
-# Also install flask, spaCy, and the English data and models needed for NLP
-pip3 install flask --user
-sudo pip3 install -U spacy
-sudo python3 -m spacy.en.download all
 
-# Install the Watson API library
-pip3 install pytest-runner
-pip3 install watson-developer-cloud
+# Copy keys_template.py to a file called keys.py, and fill in ToneAnalyzer and Cloudinary API credentials
 
-# Navigate to the root directory and install npm packages
+# Navigate to the root direcotry and install python dependencies
+pip3 install -r requirements.txt
+
+# Install the English data and models needed for NLP
+python3 -m spacy download en
+
+# Install npm packages
 npm install
 
 # Run webpack
